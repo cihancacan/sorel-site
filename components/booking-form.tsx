@@ -26,28 +26,96 @@ interface BookingFormProps {
 
 export default function BookingForm({ locale, t }: BookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const services = locale === 'fr' ? servicesFr : servicesEn;
 
-  const budgetOptions = locale === 'fr'
-    ? ['Moins de 1 000 \u20AC', '1 000 \u2013 2 500 \u20AC', '2 500 \u2013 5 000 \u20AC', '5 000 \u2013 10 000 \u20AC', 'Plus de 10 000 \u20AC']
-    : ['Less than \u20AC1,000', '\u20AC1,000 \u2013 \u20AC2,500', '\u20AC2,500 \u2013 \u20AC5,000', '\u20AC5,000 \u2013 \u20AC10,000', 'More than \u20AC10,000'];
+  const budgetOptions =
+    locale === 'fr'
+      ? [
+          'Moins de 1 000 €',
+          '1 000 – 2 500 €',
+          '2 500 – 5 000 €',
+          '5 000 – 10 000 €',
+          'Plus de 10 000 €',
+        ]
+      : [
+          'Less than €1,000',
+          '€1,000 – €2,500',
+          '€2,500 – €5,000',
+          '€5,000 – €10,000',
+          'More than €10,000',
+        ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      service: formData.get('service'),
+      city: formData.get('city'),
+      mediaType: formData.get('mediaType'),
+      budget: formData.get('budget'),
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+    };
+
+    try {
+      setLoading(true);
+
+      const res = await fetch('/api/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        alert(
+          locale === 'fr'
+            ? "Une erreur s'est produite. Merci de réessayer."
+            : 'An error occurred. Please try again.'
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      alert(
+        locale === 'fr'
+          ? "Une erreur s'est produite. Merci de réessayer."
+          : 'An error occurred. Please try again.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className="text-center py-20">
-        <CheckCircle size={40} className="text-sorel-champagne mx-auto mb-8" strokeWidth={1} />
-        <p className="font-display text-2xl font-light text-sorel-black mb-3">{t.success}</p>
+        <CheckCircle
+          size={40}
+          className="text-sorel-champagne mx-auto mb-8"
+          strokeWidth={1}
+        />
+        <p className="font-display text-2xl font-light text-sorel-black mb-3">
+          {t.success}
+        </p>
       </div>
     );
   }
 
-  const inputClass = "w-full bg-transparent border border-sorel-black/8 px-4 py-4 text-sm text-sorel-black font-light placeholder:text-sorel-silver/40 focus:outline-none focus:border-sorel-black/30 transition-colors";
-  const labelClass = "sorel-label mb-3 block";
+  const inputClass =
+    'w-full bg-transparent border border-sorel-black/8 px-4 py-4 text-sm text-sorel-black font-light placeholder:text-sorel-silver/40 focus:outline-none focus:border-sorel-black/30 transition-colors';
+  const labelClass = 'sorel-label mb-3 block';
 
   return (
     <form onSubmit={handleSubmit} className="space-y-7">
@@ -62,23 +130,30 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
           <label className={labelClass}>{t.service}</label>
-          <select className={inputClass} required>
+          <select name="service" className={inputClass} required>
             <option value="">&mdash;</option>
             {services.map((s) => (
-              <option key={s.slug} value={s.slug}>{s.title}</option>
+              <option key={s.slug} value={s.slug}>
+                {s.title}
+              </option>
             ))}
           </select>
         </div>
         <div>
           <label className={labelClass}>{t.city}</label>
-          <input type="text" className={inputClass} placeholder="Paris" />
+          <input
+            name="city"
+            type="text"
+            className={inputClass}
+            placeholder="Paris"
+          />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
           <label className={labelClass}>{t.mediaType}</label>
-          <select className={inputClass}>
+          <select name="mediaType" className={inputClass}>
             <option value="photo">{t.photo}</option>
             <option value="video">{t.video}</option>
             <option value="both">{t.both}</option>
@@ -86,10 +161,12 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
         </div>
         <div>
           <label className={labelClass}>{t.budget}</label>
-          <select className={inputClass}>
+          <select name="budget" className={inputClass}>
             <option value="">&mdash;</option>
             {budgetOptions.map((b) => (
-              <option key={b} value={b}>{b}</option>
+              <option key={b} value={b}>
+                {b}
+              </option>
             ))}
           </select>
         </div>
@@ -98,26 +175,34 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
           <label className={labelClass}>{t.name}</label>
-          <input type="text" className={inputClass} required />
+          <input name="name" type="text" className={inputClass} required />
         </div>
         <div>
           <label className={labelClass}>{t.email}</label>
-          <input type="email" className={inputClass} required />
+          <input name="email" type="email" className={inputClass} required />
         </div>
       </div>
 
       <div>
         <label className={labelClass}>{t.phone}</label>
-        <input type="tel" className={inputClass} />
+        <input name="phone" type="tel" className={inputClass} required />
       </div>
 
       <div>
         <label className={labelClass}>{t.message}</label>
-        <textarea className={`${inputClass} resize-none`} rows={4} />
+        <textarea
+          name="message"
+          className={`${inputClass} resize-none`}
+          rows={4}
+        />
       </div>
 
-      <button type="submit" className="sorel-btn-primary w-full justify-center">
-        {t.submit}
+      <button
+        type="submit"
+        disabled={loading}
+        className="sorel-btn-primary w-full justify-center disabled:opacity-60"
+      >
+        {loading ? (locale === 'fr' ? 'Envoi...' : 'Sending...') : t.submit}
         <Send size={14} />
       </button>
     </form>
