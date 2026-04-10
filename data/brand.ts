@@ -12,5 +12,5 @@ export const brand = {
   facebook: 'https://facebook.com/sorelstudio',
   pinterest: 'https://pinterest.fr/sorelstudio',
   linkedin: 'https://linkedin.com/company/sorelstudio',
-  url: 'https://sorel.studio',
+  url: 'https://sorelstudio.fr',
 };
