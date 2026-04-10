@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --background: 0 0% 98%;
+  --foreground: 0 0% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 4%;
+  --primary: 0 0% 4%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 4%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --accent: 35 25% 70%;
+  --accent-foreground: 0 0% 4%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 0% 4%;
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-sorel-cream text-sorel-black font-sans;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+
+  ::selection {
+    @apply bg-sorel-black text-sorel-cream;
+  }
+}
+
+@layer components {
+  .sorel-label {
+    @apply text-[10px] font-sans font-medium tracking-[0.25em] uppercase text-sorel-silver;
+  }
+
+  .sorel-heading {
+    @apply font-display font-light text-sorel-black;
+    letter-spacing: -0.02em;
+  }
+
+  .sorel-divider {
+    @apply w-10 h-px bg-sorel-champagne;
+  }
+
+  .sorel-btn-primary {
+    @apply inline-flex items-center gap-3 bg-sorel-black text-sorel-cream text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-anthracite;
+  }
+
+  .sorel-btn-outline {
+    @apply inline-flex items-center gap-3 border border-sorel-black/20 text-sorel-black text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-black hover:text-sorel-cream hover:border-sorel-black;
+  }
+
+  .sorel-section {
+    @apply py-24 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  .sorel-container {
+    @apply max-w-7xl mx-auto;
+  }
+}

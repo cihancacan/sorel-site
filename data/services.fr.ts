@@ -1,0 +1,178 @@
+export interface Service {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  category: string;
+  description: string;
+  heroLine: string;
+  type: 'photo' | 'video' | 'photo-video';
+}
+
+export const servicesFr: Service[] = [
+  {
+    slug: 'photographe-mariage',
+    title: 'Photographe de Mariage',
+    shortTitle: 'Mariage Photo',
+    category: 'mariage',
+    description: 'SOREL immortalise chaque instant de votre mariage avec une précision et une sensibilité inégalées. Chaque image raconte l\'histoire que vous avez vécue.',
+    heroLine: 'La mémoire photographique de votre plus beau jour.',
+    type: 'photo',
+  },
+  {
+    slug: 'videaste-mariage',
+    title: 'Vidéaste de Mariage',
+    shortTitle: 'Mariage Vidéo',
+    category: 'mariage',
+    description: 'Un film de mariage SOREL va au-delà du documentaire. Chaque mouvement, chaque émotion, restitués avec l\'élégance d\'un court-métrage.',
+    heroLine: 'Revivez chaque émotion, à l\'infini.',
+    type: 'video',
+  },
+  {
+    slug: 'photo-video-mariage',
+    title: 'Photo & Vidéo Mariage',
+    shortTitle: 'Mariage Photo & Film',
+    category: 'mariage',
+    description: 'La formule complète SOREL : photo et film réunis pour une restitution totale de votre mariage. Deux médias, une seule signature.',
+    heroLine: 'L\'expérience SOREL dans sa plénitude.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'photographe-fiancailles',
+    title: 'Photographe de Fiançailles',
+    shortTitle: 'Fiançailles Photo',
+    category: 'fiancailles',
+    description: 'Une séance de fiançailles SOREL est bien plus qu\'un shooting. C\'est une mise en scène de votre complicité, dans un cadre choisi avec soin.',
+    heroLine: 'Votre histoire commence ici.',
+    type: 'photo',
+  },
+  {
+    slug: 'videaste-fiancailles',
+    title: 'Vidéaste de Fiançailles',
+    shortTitle: 'Fiançailles Vidéo',
+    category: 'fiancailles',
+    description: 'Un film de fiançailles SOREL capture la légèreté et l\'amour de cette période unique, avec une sensibilité cinématographique rare.',
+    heroLine: 'Le début de votre film d\'amour.',
+    type: 'video',
+  },
+  {
+    slug: 'photo-video-fiancailles',
+    title: 'Photo & Vidéo Fiançailles',
+    shortTitle: 'Fiançailles Photo & Film',
+    category: 'fiancailles',
+    description: 'Photo et vidéo réunies pour immortaliser vos fiançailles sous tous les angles, avec la signature visuelle SOREL.',
+    heroLine: 'Deux regards sur un seul instant.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'photographe-evenement-prive',
+    title: 'Photographe Événement Privé',
+    shortTitle: 'Événement Privé Photo',
+    category: 'evenement-prive',
+    description: 'Anniversaires, dîners de gala, fêtes privées : SOREL couvre vos événements avec discrétion et excellence.',
+    heroLine: 'L\'élégance de vos moments privés, préservée.',
+    type: 'photo',
+  },
+  {
+    slug: 'videaste-evenement-prive',
+    title: 'Vidéaste Événement Privé',
+    shortTitle: 'Événement Privé Vidéo',
+    category: 'evenement-prive',
+    description: 'Un film événementiel SOREL transforme votre soirée en une œuvre mémorable, capturant l\'énergie et l\'atmosphère uniques du moment.',
+    heroLine: 'L\'atmosphère de votre soirée, gravée pour toujours.',
+    type: 'video',
+  },
+  {
+    slug: 'photo-video-evenement-prive',
+    title: 'Photo & Vidéo Événement Privé',
+    shortTitle: 'Événement Privé Photo & Film',
+    category: 'evenement-prive',
+    description: 'La couverture complète de votre événement privé : photo et film SOREL pour une mémoire totale et une qualité premium.',
+    heroLine: 'Votre événement, sublimé sous deux angles.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'photographe-evenement-entreprise',
+    title: 'Photographe Événement Entreprise',
+    shortTitle: 'Événement Corporate Photo',
+    category: 'evenement-entreprise',
+    description: 'Conférences, séminaires, lançaments de produits : SOREL capture l\'image de votre entreprise avec professionnalisme et élégance.',
+    heroLine: 'L\'image de votre entreprise, à la hauteur de vos ambitions.',
+    type: 'photo',
+  },
+  {
+    slug: 'videaste-evenement-entreprise',
+    title: 'Vidéaste Événement Entreprise',
+    shortTitle: 'Événement Corporate Vidéo',
+    category: 'evenement-entreprise',
+    description: 'Des films corporate qui reflètent l\'ADN de votre marque, produits avec la précision et l\'exigence de la signature SOREL.',
+    heroLine: 'Le storytelling visuel de votre marque.',
+    type: 'video',
+  },
+  {
+    slug: 'photo-video-evenement-entreprise',
+    title: 'Photo & Vidéo Événement Entreprise',
+    shortTitle: 'Corporate Photo & Film',
+    category: 'evenement-entreprise',
+    description: 'La solution complète pour vos événements d\'entreprise : photo et film SOREL pour un contenu professionnel multi-support.',
+    heroLine: 'Contenu premium pour votre communication corporate.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'shooting-couple',
+    title: 'Shooting Couple',
+    shortTitle: 'Couple',
+    category: 'shooting',
+    description: 'Une séance photo couple SOREL : deux personnes, un instant, une lumière. Des images qui vous ressemblent et vous surprennent.',
+    heroLine: 'Votre complicité, mise en lumière.',
+    type: 'photo',
+  },
+  {
+    slug: 'shooting-portrait',
+    title: 'Shooting Portrait',
+    shortTitle: 'Portrait',
+    category: 'shooting',
+    description: 'Portraits éditoriaux ou personnels, SOREL révèle votre singularité avec une approche haut de gamme et un regard affûté.',
+    heroLine: 'Votre portrait, vu par SOREL.',
+    type: 'photo',
+  },
+  {
+    slug: 'shooting-famille',
+    title: 'Shooting Famille',
+    shortTitle: 'Famille',
+    category: 'shooting',
+    description: 'Des souvenirs de famille qui traverseront le temps. SOREL capture vos liens avec naturel, chaleur et précision artistique.',
+    heroLine: 'Les instants qui comptent, pour toujours.',
+    type: 'photo',
+  },
+  {
+    slug: 'shooting-touristique',
+    title: 'Shooting Touristique',
+    shortTitle: 'Touristique',
+    category: 'shooting',
+    description: 'Voyagez avec un regard SOREL. Des photos de voyage haut de gamme qui capturent l\'essence d\'un lieu et l\'émotion d\'un moment vécu.',
+    heroLine: 'Votre voyage, vu par un regard d\'exception.',
+    type: 'photo',
+  },
+  {
+    slug: 'demande-en-mariage',
+    title: 'Demande en Mariage',
+    shortTitle: 'Demande en Mariage',
+    category: 'special',
+    description: 'Immortalisez la demande en mariage la plus importante de votre vie. SOREL planifie et capture ce moment unique avec discrétion absolue.',
+    heroLine: 'Ce oui qui change tout.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'contenu-reseaux-sociaux',
+    title: 'Contenu Réseaux Sociaux',
+    shortTitle: 'Réseaux Sociaux',
+    category: 'digital',
+    description: 'Contenu visuel premium pour vos réseaux sociaux : photos et vidéos verticales optimisées pour Instagram, LinkedIn et TikTok, livrées rapidement.',
+    heroLine: 'Votre feed, à la hauteur de votre image.',
+    type: 'photo-video',
+  },
+];
+
+export function getServiceBySlug(slug: string): Service | undefined {
+  return servicesFr.find((s) => s.slug === slug);
+}

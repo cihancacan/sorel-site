@@ -1,0 +1,178 @@
+export interface Service {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  category: string;
+  description: string;
+  heroLine: string;
+  type: 'photo' | 'video' | 'photo-video';
+}
+
+export const servicesEn: Service[] = [
+  {
+    slug: 'wedding-photographer',
+    title: 'Wedding Photographer',
+    shortTitle: 'Wedding Photo',
+    category: 'wedding',
+    description: 'SOREL captures every moment of your wedding with unmatched precision and sensitivity. Each image tells the story exactly as you lived it.',
+    heroLine: 'The photographic memory of your greatest day.',
+    type: 'photo',
+  },
+  {
+    slug: 'wedding-videographer',
+    title: 'Wedding Videographer',
+    shortTitle: 'Wedding Film',
+    category: 'wedding',
+    description: 'A SOREL wedding film goes beyond documentary. Every movement, every emotion, rendered with the elegance of a short film.',
+    heroLine: 'Relive every emotion, forever.',
+    type: 'video',
+  },
+  {
+    slug: 'wedding-photo-video',
+    title: 'Wedding Photo & Film',
+    shortTitle: 'Wedding Photo & Film',
+    category: 'wedding',
+    description: 'The complete SOREL experience: photo and film united for a total recreation of your wedding. Two media, one signature.',
+    heroLine: 'The SOREL experience in its fullness.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'engagement-photographer',
+    title: 'Engagement Photographer',
+    shortTitle: 'Engagement Photo',
+    category: 'engagement',
+    description: 'A SOREL engagement session is much more than a shoot. It is a staging of your connection, in a carefully chosen setting.',
+    heroLine: 'Your story begins here.',
+    type: 'photo',
+  },
+  {
+    slug: 'engagement-videographer',
+    title: 'Engagement Videographer',
+    shortTitle: 'Engagement Film',
+    category: 'engagement',
+    description: 'A SOREL engagement film captures the lightness and love of this unique period, with rare cinematic sensitivity.',
+    heroLine: 'The beginning of your love story.',
+    type: 'video',
+  },
+  {
+    slug: 'engagement-photo-video',
+    title: 'Engagement Photo & Film',
+    shortTitle: 'Engagement Photo & Film',
+    category: 'engagement',
+    description: 'Photo and film combined to immortalize your engagement from every angle, with the SOREL visual signature.',
+    heroLine: 'Two perspectives on a single moment.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'private-event-photographer',
+    title: 'Private Event Photographer',
+    shortTitle: 'Private Event Photo',
+    category: 'private-event',
+    description: 'Birthdays, gala dinners, private parties: SOREL covers your events with discretion and excellence.',
+    heroLine: 'The elegance of your private moments, preserved.',
+    type: 'photo',
+  },
+  {
+    slug: 'private-event-videographer',
+    title: 'Private Event Videographer',
+    shortTitle: 'Private Event Film',
+    category: 'private-event',
+    description: 'A SOREL event film transforms your evening into a memorable work, capturing the unique energy and atmosphere of the moment.',
+    heroLine: 'The atmosphere of your evening, captured forever.',
+    type: 'video',
+  },
+  {
+    slug: 'private-event-photo-video',
+    title: 'Private Event Photo & Film',
+    shortTitle: 'Private Event Photo & Film',
+    category: 'private-event',
+    description: 'Complete coverage of your private event: SOREL photo and film for total memory and premium quality.',
+    heroLine: 'Your event, elevated from two angles.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'corporate-event-photographer',
+    title: 'Corporate Event Photographer',
+    shortTitle: 'Corporate Event Photo',
+    category: 'corporate',
+    description: 'Conferences, seminars, product launches: SOREL captures your company\'s image with professionalism and elegance.',
+    heroLine: 'Your company\'s image, at the height of your ambitions.',
+    type: 'photo',
+  },
+  {
+    slug: 'corporate-event-videographer',
+    title: 'Corporate Event Videographer',
+    shortTitle: 'Corporate Event Film',
+    category: 'corporate',
+    description: 'Corporate films that reflect the DNA of your brand, produced with the precision and rigor of the SOREL signature.',
+    heroLine: 'The visual storytelling of your brand.',
+    type: 'video',
+  },
+  {
+    slug: 'corporate-event-photo-video',
+    title: 'Corporate Event Photo & Film',
+    shortTitle: 'Corporate Photo & Film',
+    category: 'corporate',
+    description: 'The complete solution for your corporate events: SOREL photo and film for professional multi-platform content.',
+    heroLine: 'Premium content for your corporate communications.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'couple-photoshoot',
+    title: 'Couple Photoshoot',
+    shortTitle: 'Couple',
+    category: 'photoshoot',
+    description: 'A SOREL couple session: two people, one moment, one light. Images that look like you and surprise you.',
+    heroLine: 'Your connection, brought to light.',
+    type: 'photo',
+  },
+  {
+    slug: 'portrait-photoshoot',
+    title: 'Portrait Photoshoot',
+    shortTitle: 'Portrait',
+    category: 'photoshoot',
+    description: 'Editorial or personal portraits, SOREL reveals your uniqueness with a high-end approach and sharp artistic eye.',
+    heroLine: 'Your portrait, as seen by SOREL.',
+    type: 'photo',
+  },
+  {
+    slug: 'family-photoshoot',
+    title: 'Family Photoshoot',
+    shortTitle: 'Family',
+    category: 'photoshoot',
+    description: 'Family memories that will stand the test of time. SOREL captures your bonds with naturalness, warmth, and artistic precision.',
+    heroLine: 'The moments that matter, forever.',
+    type: 'photo',
+  },
+  {
+    slug: 'tourist-photoshoot',
+    title: 'Tourist Photoshoot',
+    shortTitle: 'Tourist',
+    category: 'photoshoot',
+    description: 'Travel with a SOREL perspective. High-end travel photos that capture the essence of a place and the emotion of a lived moment.',
+    heroLine: 'Your journey, seen through an exceptional lens.',
+    type: 'photo',
+  },
+  {
+    slug: 'proposal-photographer',
+    title: 'Proposal Photographer',
+    shortTitle: 'Proposal',
+    category: 'special',
+    description: 'Immortalize the most important proposal of your life. SOREL plans and captures this unique moment with absolute discretion.',
+    heroLine: 'That yes that changes everything.',
+    type: 'photo-video',
+  },
+  {
+    slug: 'social-media-content',
+    title: 'Social Media Content',
+    shortTitle: 'Social Media',
+    category: 'digital',
+    description: 'Premium visual content for your social media: photos and vertical videos optimized for Instagram, LinkedIn and TikTok, delivered rapidly.',
+    heroLine: 'Your feed, at the level of your image.',
+    type: 'photo-video',
+  },
+];
+
+export function getServiceBySlug(slug: string): Service | undefined {
+  return servicesEn.find((s) => s.slug === slug);
+}

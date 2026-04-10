@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "signature": "Signature SOREL",
+    "realisations": "Réalisations",
+    "films": "Films",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "reserver": "Réserver"
+  },
+  "hero": {
+    "tagline": "Photo & Film",
+    "baseline": "Revoyez l'instant comme vous l'avez vécu.",
+    "sub": "Photo & film haut de gamme pensés pour restituer la sensation réelle d'un moment.",
+    "ctaWork": "Voir nos réalisations",
+    "ctaBook": "Réserver votre date"
+  },
+  "signature": {
+    "title": "La Signature SOREL",
+    "subtitle": "Vous ne réservez pas un photographe. Vous réservez une maison.",
+    "p1": "SOREL est une maison photo & film, pas un freelance. Chaque prestation est encadrée par une direction artistique unique, une exigence constante et un regard d'exception.",
+    "p2": "Quel que soit le talent mobilisé, la signature SOREL garantit une cohérence visuelle totale. Même style, même précision, même émotion.",
+    "p3": "Nous restituons l'instant comme vous l'avez vécu. Pas comme une reconstitution. Comme une mémoire vivante.",
+    "learnMore": "Découvrir la signature"
+  },
+  "services": {
+    "title": "Nos Prestations",
+    "subtitle": "Photo, film ou les deux — chaque prestation SOREL est pensée pour l'excellence.",
+    "viewAll": "Voir tous nos services"
+  },
+  "options": {
+    "title": "Options Signature",
+    "subtitle": "Allez plus loin avec nos options premium exclusives.",
+    "items": {
+      "express": {
+        "title": "Livraison Express Réseaux Sociaux",
+        "desc": "10 images retouchées livrées dans les 48h pour vos réseaux sociaux."
+      },
+      "teaser": {
+        "title": "Teaser Vertical 24h",
+        "desc": "Un teaser vidéo vertical optimisé pour Instagram ou TikTok, livré le lendemain."
+      },
+      "print": {
+        "title": "Impression Photo Sur Place",
+        "desc": "Impressions photo haut de gamme directement lors de votre événement."
+      },
+      "frames": {
+        "title": "Cadres Personnalisés",
+        "desc": "Cadres soignés personnalisés à votre événement pour des souvenirs uniques."
+      },
+      "guests": {
+        "title": "Portraits Invités Premium",
+        "desc": "Portraits soignés de vos invités, livrés après l'événement."
+      },
+      "album": {
+        "title": "Albums & Tirages Premium",
+        "desc": "Albums artisanaux et tirages d'art pour une mémoire qui dure."
+      }
+    }
+  },
+  "work": {
+    "title": "Réalisations",
+    "subtitle": "Une sélection de nos projets les plus marquants.",
+    "viewAll": "Voir toutes les réalisations"
+  },
+  "films": {
+    "title": "Films",
+    "subtitle": "Nos films parlent là où les mots s'arrêtent.",
+    "watchFilm": "Voir le film"
+  },
+  "cta": {
+    "title": "Réservez votre date",
+    "subtitle": "Chaque moment mérite la signature SOREL.",
+    "button": "Réserver maintenant",
+    "contact": "Nous contacter"
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "subtitle": "Tout ce que vous souhaitez savoir sur SOREL."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Parlons de votre projet.",
+    "email": "Email",
+    "phone": "Téléphone",
+    "form": {
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "phone": "Téléphone",
+      "message": "Votre message",
+      "send": "Envoyer",
+      "success": "Votre message a été envoyé avec succès.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  },
+  "booking": {
+    "title": "Réserver votre date",
+    "subtitle": "Partagez les détails de votre projet. Nous revenons vers vous sous 24h.",
+    "form": {
+      "service": "Type de prestation",
+      "city": "Ville",
+      "mediaType": "Photo / Vidéo / Les deux",
+      "budget": "Budget estimé",
+      "name": "Nom complet",
+      "email": "Adresse email",
+      "phone": "Téléphone",
+      "message": "Informations complémentaires",
+      "submit": "Envoyer la demande",
+      "success": "Votre demande a été envoyée. Nous revenons vers vous sous 24h.",
+      "photo": "Photo",
+      "video": "Vidéo",
+      "both": "Photo & Vidéo"
+    }
+  },
+  "footer": {
+    "tagline": "Photo & Film haut de gamme.",
+    "services": "Services",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "rights": "Tous droits réservés."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "subtitle": "Cette page n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  },
+  "signaturePage": {
+    "title": "La Signature SOREL",
+    "subtitle": "Une maison, une exigence, une vision.",
+    "s1Title": "Nous sommes une maison",
+    "s1Body": "SOREL n'est pas un freelance, ni une agence classique. Nous sommes une maison photo & film avec une direction artistique propre, des standards de qualité précis et une culture de l'excellence.",
+    "s2Title": "Une signature visuelle cohérente",
+    "s2Body": "Quel que soit le talent qui couvre votre événement, la signature SOREL est présente. Même esthétique, même précision, même rendu. Vous réservez une maison, pas un individu.",
+    "s3Title": "La restitution de l'instant vécu",
+    "s3Body": "Notre obsession : restituer l'instant comme vous l'avez vécu. Pas une reconstitution scénographiée, mais une mémoire vivante, fidèle à la sensation réelle du moment.",
+    "s4Title": "Élégance, précision, énergie",
+    "s4Body": "Chaque image, chaque plan est pensé. Rien n'est laissé au hasard. SOREL marie l'élégance formelle à l'énergie naturelle de l'instant."
+  }
+}

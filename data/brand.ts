@@ -1,0 +1,16 @@
+export const brand = {
+  name: 'SOREL',
+  descriptor: 'Photo & Film',
+  baselineFr: 'Revoyez l\'instant comme vous l\'avez v\u00E9cu.',
+  baselineEn: 'Relive the moment as you truly lived it.',
+  email: 'contact@sorelstudio.fr',
+  phone: '01 88 84 22 22',
+  phoneRaw: '+33188842222',
+  whatsapp: '+33614582892',
+  instagram: 'https://instagram.com/sorel.studio',
+  tiktok: 'https://tiktok.com/@sorel.studio',
+  facebook: 'https://facebook.com/sorelstudio',
+  pinterest: 'https://pinterest.fr/sorelstudio',
+  linkedin: 'https://linkedin.com/company/sorelstudio',
+  url: 'https://sorel.studio',
+};
