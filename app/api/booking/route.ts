@@ -95,7 +95,7 @@ Message: ${message}
           <p>Bonjour ${data.name},</p>
           <p>Nous vous remercions pour votre demande.</p>
           <p>Notre équipe a bien reçu votre demande de réservation et reviendra vers vous très prochainement afin d’échanger sur votre projet.</p>
-          <p>Nous vous appellerons au <strong>01 88 84 22 22</strong>.</p>
+          <p>Nous vous appellerons à partir de ce numéro <strong>01 88 84 22 22</strong>.</p>
           <p>Si vous avez une préférence de disponibilité, vous pouvez répondre directement à cet email en nous indiquant les créneaux qui vous conviennent.</p>
           <p>Bien cordialement,<br>L’équipe SOREL Studio</p>
         </div>
