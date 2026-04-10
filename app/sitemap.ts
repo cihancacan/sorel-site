@@ -22,29 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urls: MetadataRoute.Sitemap = []
 
   for (const page of staticPages) {
-    const frUrl = `${BASE_URL}/fr${page.fr ? `/${page.fr}` : ''}`
-    const enUrl = `${BASE_URL}/en${page.en ? `/${page.en}` : ''}`
-
     urls.push(
       {
-        url: frUrl,
+        url: `${BASE_URL}/fr${page.fr ? `/${page.fr}` : ''}`,
         lastModified: new Date(),
-        alternates: {
-          languages: {
-            fr: frUrl,
-            en: enUrl,
-          },
-        },
       },
       {
-        url: enUrl,
+        url: `${BASE_URL}/en${page.en ? `/${page.en}` : ''}`,
         lastModified: new Date(),
-        alternates: {
-          languages: {
-            fr: frUrl,
-            en: enUrl,
-          },
-        },
       }
     )
   }
@@ -53,56 +38,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const serviceEn = servicesEn[index]
     if (!serviceEn) return
 
-    const frServiceUrl = `${BASE_URL}/fr/${serviceFr.slug}`
-    const enServiceUrl = `${BASE_URL}/en/${serviceEn.slug}`
-
     urls.push(
       {
-        url: frServiceUrl,
+        url: `${BASE_URL}/fr/${serviceFr.slug}`,
         lastModified: new Date(),
-        alternates: {
-          languages: {
-            fr: frServiceUrl,
-            en: enServiceUrl,
-          },
-        },
       },
       {
-        url: enServiceUrl,
+        url: `${BASE_URL}/en/${serviceEn.slug}`,
         lastModified: new Date(),
-        alternates: {
-          languages: {
-            fr: frServiceUrl,
-            en: enServiceUrl,
-          },
-        },
       }
     )
 
     cities.forEach((city) => {
-      const frCityUrl = `${BASE_URL}/fr/${serviceFr.slug}-${city.slug}`
-      const enCityUrl = `${BASE_URL}/en/${serviceEn.slug}-${city.slug}`
-
       urls.push(
         {
-          url: frCityUrl,
+          url: `${BASE_URL}/fr/${serviceFr.slug}-${city.slug}`,
           lastModified: new Date(),
-          alternates: {
-            languages: {
-              fr: frCityUrl,
-              en: enCityUrl,
-            },
-          },
         },
         {
-          url: enCityUrl,
+          url: `${BASE_URL}/en/${serviceEn.slug}-${city.slug}`,
           lastModified: new Date(),
-          alternates: {
-            languages: {
-              fr: frCityUrl,
-              en: enCityUrl,
-            },
-          },
         }
       )
     })
