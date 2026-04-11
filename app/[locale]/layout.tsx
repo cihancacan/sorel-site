@@ -49,6 +49,7 @@ export default function LocaleLayout({
           <main>{children}</main>
           <Footer locale={locale as Locale} />
           <WhatsAppButton />
+          <CrispChat />
           <CookieBanner />
         </NextIntlClientProvider>
       </body>
