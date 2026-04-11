@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import WhatsAppButton from '@/components/whatsapp-button';
 import CookieBanner from '@/components/cookie-banner';
 import { getMessages } from '@/lib/i18n';
+import CrispChat from '@/components/crisp-chat';
 
 type Locale = 'fr' | 'en';
 
