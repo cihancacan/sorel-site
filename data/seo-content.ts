@@ -14,14 +14,7 @@ export function generateServiceSeoFr(service: Service): { intro: string; process
     ],
   };
 }
-  if (service.category === 'studio-production') {
-  return {
-    intro: `Vous recherchez une équipe de production audiovisuelle premium à ${city.name} ? SOREL accompagne studios podcast, émissions, interviews, courts-métrages et tournages de film à ${city.name} et dans toute la région ${city.region}. Nous intervenons avec une direction visuelle exigeante, une organisation fluide et une exécution pensée pour les marques, médias, talents et productions.`,
-    local: `À ${city.name}, nous adaptons chaque tournage au lieu, au format et aux contraintes de diffusion : studio, bureaux, plateau, hôtel, lieu événementiel ou décor extérieur. Cette souplesse nous permet de produire des contenus premium tout en gardant la cohérence de la signature SOREL.`,
-    advantages: `Choisir SOREL à ${city.name}, c'est bénéficier d'un partenaire capable de structurer un projet audiovisuel de bout en bout : préparation, tournage, direction visuelle, captation multi-caméras et post-production. Nous couvrons aussi bien les formats récurrents que les productions plus ambitieuses, avec un rendu élégant et immédiatement exploitable.`,
-    nearby: `Nous intervenons à ${city.name} mais aussi dans les villes proches et plus largement dans toute la France. Contactez-nous pour étudier votre format, vérifier les disponibilités et organiser un tournage adapté à votre calendrier.`,
-  };
-}
+
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
   const media = isPhoto ? 'photographe' : isVideo ? 'vid\u00E9aste' : 'photographe et vid\u00E9aste';
@@ -52,14 +45,7 @@ export function generateServiceSeoEn(service: Service): { intro: string; process
     ],
   };
 }
-  if (service.category === 'studio-production') {
-  return {
-    intro: `Looking for a premium audiovisual production team in ${city.name}? SOREL supports podcast studios, shows, interviews, short films and film productions in ${city.name} and across the ${city.region} region. We operate with demanding visual direction, smooth organization and execution designed for brands, media teams, talents and productions.`,
-    local: `In ${city.name}, we adapt each shoot to the venue, format and distribution needs: studio, office, set, hotel, event space or exterior location. This flexibility allows us to produce premium content while preserving the consistency of the SOREL signature.`,
-    advantages: `Choosing SOREL in ${city.name} means working with a partner able to structure an audiovisual project end to end: preparation, production, visual direction, multi-camera capture and post-production. We cover both recurring formats and more ambitious productions with an elegant, immediately usable output.`,
-    nearby: `We operate in ${city.name}, nearby cities and more broadly throughout France. Contact us to define your format, confirm availability and organize a production aligned with your schedule.`,
-  };
-}
+
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
   const media = isPhoto ? 'photographer' : isVideo ? 'videographer' : 'photographer and videographer';
