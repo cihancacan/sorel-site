@@ -2,6 +2,26 @@ import type { Service } from './services.fr';
 import type { City } from './cities';
 
 export function generateServiceSeoFr(service: Service): { intro: string; process: string; whyUs: string; faq: { q: string; a: string }[] } {
+  if (service.category === 'studio-production') {
+  return {
+    intro: `SOREL accompagne les marques, créateurs, médias et productions dans la création de formats audiovisuels premium : studio podcast, émissions, interviews, captations, courts-métrages et tournages de film. Chaque projet bénéficie d'une direction visuelle exigeante, d'une préparation précise et d'une exécution fluide, pensée pour diffuser une image forte, cohérente et haut de gamme.`,
+    process: `Notre processus commence par le cadrage du format, des objectifs, du rythme éditorial et des contraintes techniques. Nous préparons ensuite la mise en scène, la lumière, le son, les axes caméra et le déroulé de tournage. Le jour J, notre équipe coordonne la captation avec rigueur pour sécuriser le rendu. En post-production, nous assurons sélection, montage, étalonnage et déclinaisons adaptées à vos canaux de diffusion.`,
+    whyUs: `SOREL aborde chaque production comme une maison visuelle, pas comme une simple prestation technique. Cela signifie une signature cohérente, un haut niveau d'exigence sur le cadre, la lumière et le rythme, et la capacité à produire aussi bien des formats éditoriaux réguliers que des projets narratifs plus ambitieux. Studio podcast, émission, interview, court-métrage ou film : nous construisons une image premium, claire et durable.`,
+    faq: [
+      { q: 'Combien coûte une production audiovisuelle SOREL ?', a: 'Nos tarifs dépendent du format, du nombre de caméras, du lieu, de la durée de tournage et du niveau de post-production attendu. Nous établissons un devis précis selon votre projet.' },
+      { q: 'Comment préparer un tournage ?', a: 'Nous cadrons avec vous le format, les objectifs, le planning, les besoins techniques et le rendu attendu afin de préparer une production fluide et cohérente.' },
+      { q: 'Quels sont les délais de livraison ?', a: 'Les délais varient selon la complexité du projet, le volume de rushes et les livrables attendus. Un planning clair est défini en amont avec votre équipe.' },
+    ],
+  };
+}
+  if (service.category === 'studio-production') {
+  return {
+    intro: `Vous recherchez une équipe de production audiovisuelle premium à ${city.name} ? SOREL accompagne studios podcast, émissions, interviews, courts-métrages et tournages de film à ${city.name} et dans toute la région ${city.region}. Nous intervenons avec une direction visuelle exigeante, une organisation fluide et une exécution pensée pour les marques, médias, talents et productions.`,
+    local: `À ${city.name}, nous adaptons chaque tournage au lieu, au format et aux contraintes de diffusion : studio, bureaux, plateau, hôtel, lieu événementiel ou décor extérieur. Cette souplesse nous permet de produire des contenus premium tout en gardant la cohérence de la signature SOREL.`,
+    advantages: `Choisir SOREL à ${city.name}, c'est bénéficier d'un partenaire capable de structurer un projet audiovisuel de bout en bout : préparation, tournage, direction visuelle, captation multi-caméras et post-production. Nous couvrons aussi bien les formats récurrents que les productions plus ambitieuses, avec un rendu élégant et immédiatement exploitable.`,
+    nearby: `Nous intervenons à ${city.name} mais aussi dans les villes proches et plus largement dans toute la France. Contactez-nous pour étudier votre format, vérifier les disponibilités et organiser un tournage adapté à votre calendrier.`,
+  };
+}
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
   const media = isPhoto ? 'photographe' : isVideo ? 'vid\u00E9aste' : 'photographe et vid\u00E9aste';
@@ -20,6 +40,26 @@ export function generateServiceSeoFr(service: Service): { intro: string; process
 }
 
 export function generateServiceSeoEn(service: Service): { intro: string; process: string; whyUs: string; faq: { q: string; a: string }[] } {
+  if (service.category === 'studio-production') {
+  return {
+    intro: `SOREL supports brands, creators, media teams and productions with premium audiovisual formats: podcast studios, shows, interviews, coverage, short films and film productions. Each project is built on demanding visual direction, precise preparation and smooth execution designed to deliver a strong, coherent and high-end image.`,
+    process: `Our process begins by defining the format, objectives, editorial rhythm and technical constraints. We then prepare staging, lighting, sound, camera angles and the production flow. On shoot day, our team handles the capture with precision to secure the result. In post-production, we manage selection, editing, grading and the final adaptations required for your distribution channels.`,
+    whyUs: `SOREL approaches every production as a visual house, not as a purely technical provider. That means a coherent signature, a high level of discipline in framing, lighting and rhythm, and the ability to produce both recurring editorial formats and more ambitious narrative projects. Podcast studio, show, interview, short film or film production: we build premium images with clarity and consistency.`,
+    faq: [
+      { q: 'How much does a SOREL audiovisual production cost?', a: 'Our rates depend on the format, number of cameras, location, shooting duration and post-production level required. We prepare a precise quote based on your project.' },
+      { q: 'How do we prepare a shoot?', a: 'We define the format, objectives, planning, technical needs and final render with you in order to build a smooth and coherent production.' },
+      { q: 'What are the delivery timelines?', a: 'Timelines depend on project complexity, rush volume and required deliverables. A clear schedule is established upfront with your team.' },
+    ],
+  };
+}
+  if (service.category === 'studio-production') {
+  return {
+    intro: `Looking for a premium audiovisual production team in ${city.name}? SOREL supports podcast studios, shows, interviews, short films and film productions in ${city.name} and across the ${city.region} region. We operate with demanding visual direction, smooth organization and execution designed for brands, media teams, talents and productions.`,
+    local: `In ${city.name}, we adapt each shoot to the venue, format and distribution needs: studio, office, set, hotel, event space or exterior location. This flexibility allows us to produce premium content while preserving the consistency of the SOREL signature.`,
+    advantages: `Choosing SOREL in ${city.name} means working with a partner able to structure an audiovisual project end to end: preparation, production, visual direction, multi-camera capture and post-production. We cover both recurring formats and more ambitious productions with an elegant, immediately usable output.`,
+    nearby: `We operate in ${city.name}, nearby cities and more broadly throughout France. Contact us to define your format, confirm availability and organize a production aligned with your schedule.`,
+  };
+}
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
   const media = isPhoto ? 'photographer' : isVideo ? 'videographer' : 'photographer and videographer';
