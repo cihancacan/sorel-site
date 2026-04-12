@@ -64,19 +64,37 @@ export function generateServiceSeoEn(service: Service): { intro: string; process
 }
 
 export function generateCitySeoFr(service: Service, city: City): { intro: string; local: string; advantages: string; nearby: string } {
+  if (service.category === 'studio-production') {
+    return {
+      intro: `Vous recherchez une équipe de production audiovisuelle premium à ${city.name} ? SOREL accompagne studios podcast, émissions, interviews, courts-métrages et tournages de film à ${city.name} et dans toute la région ${city.region}. Nous intervenons avec une direction visuelle exigeante, une organisation fluide et une exécution pensée pour les marques, médias, talents et productions.`,
+      local: `À ${city.name}, nous adaptons chaque tournage au lieu, au format et aux contraintes de diffusion : studio, bureaux, plateau, hôtel, lieu événementiel ou décor extérieur. Cette souplesse nous permet de produire des contenus premium tout en gardant la cohérence de la signature SOREL.`,
+      advantages: `Choisir SOREL à ${city.name}, c'est bénéficier d'un partenaire capable de structurer un projet audiovisuel de bout en bout : préparation, tournage, direction visuelle, captation multi-caméras et post-production. Nous couvrons aussi bien les formats récurrents que les productions plus ambitieuses, avec un rendu élégant et immédiatement exploitable.`,
+      nearby: `Nous intervenons à ${city.name} mais aussi dans les villes proches et plus largement dans toute la France. Contactez-nous pour étudier votre format, vérifier les disponibilités et organiser un tournage adapté à votre calendrier.`,
+    };
+  }
+
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
-  const media = isPhoto ? 'photographe' : isVideo ? 'vid\u00E9aste' : 'photographe et vid\u00E9aste';
+  const media = isPhoto ? 'photographe' : isVideo ? 'vidéaste' : 'photographe et vidéaste';
 
   return {
-    intro: `Vous recherchez un ${media} professionnel \u00E0 ${city.name} ? SOREL est la maison de photo et film haut de gamme qui intervient \u00E0 ${city.name} et dans toute la r\u00E9gion ${city.region}. Notre \u00E9quipe de ${media}s exp\u00E9riment\u00E9s conna\u00EEt parfaitement ${city.name}, ses lieux embl\u00E9matiques, ses espaces de r\u00E9ception et ses conditions de lumi\u00E8re. Que vous organisiez votre \u00E9v\u00E9nement dans un ch\u00E2teau, un h\u00F4tel de luxe, un jardin priv\u00E9 ou tout autre lieu \u00E0 ${city.name}, nous adaptons notre approche pour sublimer chaque instant avec la signature visuelle SOREL. ${service.description}`,
-    local: `\u00C0 ${city.name}, en ${city.region}, SOREL b\u00E9n\u00E9ficie d'une connaissance approfondie du terrain. Nous connaissons les meilleurs lieux pour vos s\u00E9ances photo, les heures de lumi\u00E8re id\u00E9ales et les espaces les plus photog\u00E9niques de la ville et de ses environs. Cette expertise locale, combin\u00E9e \u00E0 notre direction artistique nationale, nous permet d'offrir un service sur-mesure qui tire le meilleur parti de chaque lieu. Nos ${media}s \u00E0 ${city.name} sont form\u00E9s \u00E0 la signature SOREL et garantissent un r\u00E9sultat coh\u00E9rent avec notre standard d'excellence.`,
-    advantages: `Choisir SOREL \u00E0 ${city.name}, c'est opter pour une qualit\u00E9 premium sans compromis. Nous proposons une gamme compl\u00E8te de prestations adapt\u00E9es \u00E0 tous types d'\u00E9v\u00E9nements : mariages, fian\u00E7ailles, \u00E9v\u00E9nements priv\u00E9s, \u00E9v\u00E9nements d'entreprise, shootings portrait, couple et famille, demandes en mariage et contenu pour r\u00E9seaux sociaux. Chaque prestation inclut un \u00E9change pr\u00E9alable, un devis personnalis\u00E9, une couverture professionnelle le jour J et une post-production soign\u00E9e. Des options premium sont disponibles : livraison express, teaser vid\u00E9o, impressions sur place, albums artisanaux.`,
-    nearby: `Bas\u00E9s en r\u00E9gion ${city.region}, nous intervenons \u00E9galement dans les villes et communes voisines de ${city.name}. Notre \u00E9quipe se d\u00E9place dans toute la France pour couvrir vos \u00E9v\u00E9nements, o\u00F9 qu'ils se tiennent. La signature SOREL vous suit partout, avec le m\u00EAme niveau d'exigence et la m\u00EAme qualit\u00E9 premium. R\u00E9servez d\u00E8s maintenant pour garantir la disponibilit\u00E9 de notre \u00E9quipe \u00E0 ${city.name}.`,
+    intro: `Vous recherchez un ${media} professionnel à ${city.name} ? SOREL est la maison de photo et film haut de gamme qui intervient à ${city.name} et dans toute la région ${city.region}. Notre équipe de ${media}s expérimentés connaît parfaitement ${city.name}, ses lieux emblématiques, ses espaces de réception et ses conditions de lumière. Que vous organisiez votre événement dans un château, un hôtel de luxe, un jardin privé ou tout autre lieu à ${city.name}, nous adaptons notre approche pour sublimer chaque instant avec la signature visuelle SOREL. ${service.description}`,
+    local: `À ${city.name}, en ${city.region}, SOREL bénéficie d'une connaissance approfondie du terrain. Nous connaissons les meilleurs lieux pour vos séances photo, les heures de lumière idéales et les espaces les plus photogéniques de la ville et de ses environs. Cette expertise locale, combinée à notre direction artistique nationale, nous permet d'offrir un service sur-mesure qui tire le meilleur parti de chaque lieu. Nos ${media}s à ${city.name} sont formés à la signature SOREL et garantissent un résultat cohérent avec notre standard d'excellence.`,
+    advantages: `Choisir SOREL à ${city.name}, c'est opter pour une qualité premium sans compromis. Nous proposons une gamme complète de prestations adaptées à tous types d'événements : mariages, fiançailles, événements privés, événements d'entreprise, shootings portrait, couple et famille, demandes en mariage et contenu pour réseaux sociaux. Chaque prestation inclut un échange préalable, un devis personnalisé, une couverture professionnelle le jour J et une post-production soignée. Des options premium sont disponibles : livraison express, teaser vidéo, impressions sur place, albums artisanaux.`,
+    nearby: `Basés en région ${city.region}, nous intervenons également dans les villes et communes voisines de ${city.name}. Notre équipe se déplace dans toute la France pour couvrir vos événements, où qu'ils se tiennent. La signature SOREL vous suit partout, avec le même niveau d'exigence et la même qualité premium. Réservez dès maintenant pour garantir la disponibilité de notre équipe à ${city.name}.`,
   };
 }
 
 export function generateCitySeoEn(service: Service, city: City): { intro: string; local: string; advantages: string; nearby: string } {
+  if (service.category === 'studio-production') {
+    return {
+      intro: `Looking for a premium audiovisual production team in ${city.name}? SOREL supports podcast studios, shows, interviews, short films and film productions in ${city.name} and across the ${city.region} region. We operate with demanding visual direction, smooth organization and execution designed for brands, media teams, talents and productions.`,
+      local: `In ${city.name}, we adapt each shoot to the venue, format and distribution needs: studio, office, set, hotel, event space or exterior location. This flexibility allows us to produce premium content while preserving the consistency of the SOREL signature.`,
+      advantages: `Choosing SOREL in ${city.name} means working with a partner able to structure an audiovisual project end to end: preparation, production, visual direction, multi-camera capture and post-production. We cover both recurring formats and more ambitious productions with an elegant, immediately usable output.`,
+      nearby: `We operate in ${city.name}, nearby cities and more broadly throughout France. Contact us to define your format, confirm availability and organize a production aligned with your schedule.`,
+    };
+  }
+
   const isPhoto = service.type === 'photo';
   const isVideo = service.type === 'video';
   const media = isPhoto ? 'photographer' : isVideo ? 'videographer' : 'photographer and videographer';
