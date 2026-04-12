@@ -17,17 +17,19 @@ type Locale = 'fr' | 'en';
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as Locale;
+
   if (locale === 'fr') {
     return buildMetadata({
-      title: 'SOREL \u2014 Photo & Film Haut de Gamme',
-      description: 'SOREL, maison photo & film haut de gamme. Photographes et vid\u00E9astes pour mariage, \u00E9v\u00E9nements, portraits. Revoyez l\'instant comme vous l\'avez v\u00E9cu.',
+      title: 'SOREL — Photo & Film Haut de Gamme',
+      description: 'Photographe et vidéaste premium dans votre ville pour mariage et événement d’exception. SOREL Studio allie élégance, émotion et disponibilité rapide à votre date.',
       locale,
       path: '/fr',
     });
   }
+
   return buildMetadata({
-    title: 'SOREL \u2014 High-End Photo & Film',
-    description: 'SOREL, high-end photo & film house. Photographers and videographers for weddings, events, portraits. Relive the moment as you truly lived it.',
+    title: 'SOREL — High-End Photo & Film',
+    description: 'Premium photographers and videographers in your city for weddings and exceptional events. SOREL Studio combines elegance, emotion and fast availability for your date.',
     locale,
     path: '/en',
   });
