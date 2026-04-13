@@ -10,7 +10,7 @@ interface GalleryGridProps {
 
 const images = [
   {
-    src: 'https://pexels.com/fr-fr/photo/celebration-de-mariage-joyeuse-avec-un-couple-heureux-30817297.jpeg?auto=compress&cs=tinysrgb&w=900',
+    src: 'https://images.pexels.com/photos/30817297/pexels-photo-30817297.jpeg?auto=compress&cs=tinysrgb&w=900',
     alt: 'SOREL \u2014 Mariage',
     label: 'Mariage',
     span: 'col-span-2 row-span-2',
