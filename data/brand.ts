@@ -9,7 +9,7 @@ export const brand = {
   whatsapp: '+33614582892',
   instagram: 'https://instagram.com/sorelstudio.fr?igsh=N2YxYmh4a3EwdDFm',
   tiktok: 'https://https://tiktok.com/@sorelstudio.fr?_r=1&_t=ZN-95V5AiyI3QE',
-  facebook: 'https://facebook.com/profile.php?id=61570761143756',
+  facebook: 'https://www.facebook.com/photographe.autour.de.moi',
   pinterest: 'https://pinterest.fr/sorelstudio',
   linkedin: 'https://linkedin.com/company/photographes-paris',
   url: 'https://sorelstudio.fr',
