@@ -11,7 +11,7 @@ interface ServicesOverviewProps {
 
 const categoryConfig = {
   fr: {
-    mariage: { label: 'Mariage', image: 'https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    mariage: { label: 'Mariage', image: 'https://images.pexels.com/photos/30817297/pexels-photo-30817297.jpeg?auto=compress&cs=tinysrgb&w=600' },
     fiancailles: { label: 'Fian\u00E7ailles', image: 'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=600' },
     'evenement-prive': { label: '\u00C9v\u00E9nement Priv\u00E9', image: 'https://images.pexels.com/photos/3171815/pexels-photo-3171815.jpeg?auto=compress&cs=tinysrgb&w=600' },
     'evenement-entreprise': { label: 'Corporate', image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600' },
