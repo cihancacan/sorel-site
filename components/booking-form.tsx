@@ -76,16 +76,24 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       });
 
       if (!res.ok) {
-        alert(
-          locale === 'fr'
-            ? "Une erreur s'est produite. Merci de réessayer."
-            : 'An error occurred. Please try again.'
-        );
-        return;
-      }
+  alert(
+    locale === 'fr'
+      ? "Une erreur s'est produite. Merci de réessayer."
+      : 'An error occurred. Please try again.'
+  );
+  return;
+}
 
-      setSubmitted(true);
-      form.reset();
+if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+  (window as any).gtag('event', 'conversion', {
+    send_to: 'AW-18089402701/sHd_CNe45pscEM3C2bFD',
+    value: 1.0,
+    currency: 'EUR',
+  });
+}
+
+setSubmitted(true);
+form.reset();
     } catch (error) {
       console.error(error);
       alert(
