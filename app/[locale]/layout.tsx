@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/whatsapp-button';
 import CookieBanner from '@/components/cookie-banner';
 import { getMessages } from '@/lib/i18n';
 import CrispChat from '@/components/crisp-chat';
+import Script from 'next/script';
 
 type Locale = 'fr' | 'en';
 
@@ -42,7 +43,20 @@ export default function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head />
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18089402701"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18089402701');
+          `}
+        </Script>
+      </head>
       <body className="bg-sorel-cream text-sorel-black antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale as Locale} t={navT} />
