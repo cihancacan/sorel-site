@@ -6,7 +6,7 @@ export const brand = {
   email: 'contact@sorelstudio.fr',
   phone: '01 88 84 22 22',
   phoneRaw: '+33188842222',
-  whatsapp: '+33614582892',
+  whatsapp: '+33769786512',
   instagram: 'https://instagram.com/sorelstudio.fr',
   tiktok: 'https://https://tiktok.com/@sorelstudio.fr',
   facebook: 'https://www.facebook.com/photographe.autour.de.moi',
