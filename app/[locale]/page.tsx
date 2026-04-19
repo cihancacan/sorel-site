@@ -37,9 +37,9 @@ export async function generateMetadata({
     title: 'Premium Photographer & Videographer in France | SOREL Studio',
     description:
       'Premium photographer and videographer for weddings, private events and corporate projects in France. Based in Paris, SOREL Studio offers photo, video and duo coverage with reply within 24h.',
-    locale,
-    path: '/en',
-  });
+      locale,
+      path: '/en',
+    });
 }
 
 export default function HomePage({
@@ -62,27 +62,25 @@ export default function HomePage({
     heroSecondary: isFr ? 'Voir les réalisations' : 'View portfolio',
 
     introTitle: isFr
-      ? 'Une maison d’image pensée pour vendre, marquer et durer'
-      : 'An image house built to sell, impress and last',
+      ? 'Une maison d’image pensée pour les projets exigeants'
+      : 'An image house designed for demanding projects',
     introText1: isFr
-      ? 'SOREL Studio accompagne les couples, les particuliers, les marques et les entreprises qui recherchent plus qu’une simple prestation photo ou vidéo. Chaque projet est pensé avec une direction visuelle cohérente, une exécution fluide et un rendu premium.'
-      : 'SOREL Studio works with couples, individuals, brands and companies looking for more than a simple photo or video service. Each project is crafted with coherent visual direction, fluid execution and a premium result.',
+      ? 'SOREL Studio accompagne les couples, les particuliers, les marques et les entreprises qui recherchent une image élégante, cohérente et haut de gamme. Chaque projet est abordé avec exigence, fluidité et sens du détail.'
+      : 'SOREL Studio works with couples, individuals, brands and companies seeking elegant, coherent and high-end imagery. Each project is approached with precision, fluidity and attention to detail.',
     introText2: isFr
-      ? 'L’objectif n’est pas seulement de produire de belles images, mais de créer un souvenir fort, une présence visuelle juste et une expérience haut de gamme du premier échange à la livraison.'
-      : 'The goal is not only to create beautiful imagery, but to deliver a strong memory, a precise visual presence and a high-end experience from the first exchange to the final delivery.',
+      ? 'L’objectif est de créer des images fortes, naturelles et durables, avec une expérience soignée du premier échange jusqu’à la livraison finale.'
+      : 'The goal is to create strong, natural and lasting imagery, with a refined experience from the first exchange to final delivery.',
 
     offerTitle: isFr ? 'Choisissez votre univers' : 'Choose your world',
     offerText: isFr
-      ? 'Trois entrées principales pour répondre vite à l’intention du visiteur et orienter vers la bonne page de vente.'
-      : 'Three main entry points to quickly answer user intent and direct them to the right sales page.',
+      ? 'Mariage, photographie ou film : découvrez l’approche SOREL selon votre projet.'
+      : 'Wedding, photography or film: discover the SOREL approach through the lens of your project.',
 
     weddingTitle: isFr ? 'Mariage' : 'Wedding',
     weddingText: isFr
       ? 'Photo, vidéo ou formule complète pour raconter votre mariage avec élégance, émotion et cohérence.'
       : 'Photo, video or full coverage to tell your wedding story with elegance, emotion and coherence.',
-    weddingCta: isFr
-      ? 'Découvrir les offres mariage'
-      : 'Discover wedding collections',
+    weddingCta: isFr ? 'Découvrir les offres mariage' : 'Discover wedding collections',
 
     photoTitle: isFr ? 'Photographe Mariage' : 'Wedding Photography',
     photoText: isFr
@@ -100,32 +98,32 @@ export default function HomePage({
       ? 'Ce que SOREL Studio couvre'
       : 'What SOREL Studio covers',
     servicesText: isFr
-      ? 'Une approche premium pour les mariages, les événements privés, les projets corporate et les productions visuelles exigeantes.'
-      : 'A premium approach for weddings, private events, corporate projects and demanding visual productions.',
+      ? 'Mariage, événements privés, entreprise, studio et production : une signature visuelle premium pour chaque univers.'
+      : 'Wedding, private events, corporate, studio and production: a premium visual signature for every world.',
 
-    pricingTitle: isFr ? 'Repères de collections' : 'Collection markers',
+    pricingTitle: isFr ? 'Collections & repères' : 'Collections & markers',
     pricingText: isFr
-      ? 'Des prix de départ clairs pour rassurer, qualifier et aider à la prise de décision.'
-      : 'Clear starting prices to reassure, qualify and help decision-making.',
+      ? 'Des collections claires pour vous aider à vous projeter selon votre besoin.'
+      : 'Clear collections to help you project yourself according to your needs.',
 
     whyTitle: isFr
-      ? 'Pourquoi les clients choisissent SOREL'
-      : 'Why clients choose SOREL',
+      ? 'Pourquoi choisir SOREL'
+      : 'Why choose SOREL',
     whyText: isFr
-      ? 'Au-delà de l’image premium, ce qui fait la différence est la fluidité, la cohérence et la capacité à répondre vite.'
-      : 'Beyond premium imagery, what makes the difference is fluidity, consistency and the ability to reply fast.',
+      ? 'Une approche haut de gamme, une direction visuelle cohérente et une vraie fluidité dans l’expérience.'
+      : 'A high-end approach, a coherent visual direction and a truly fluid experience.',
 
     portfolioTitle: isFr
-      ? 'Un aperçu du niveau SOREL'
-      : 'A glimpse of the SOREL level',
+      ? 'Un aperçu de la signature SOREL'
+      : 'A glimpse of the SOREL signature',
     portfolioText: isFr
-      ? 'Des images pensées pour donner envie, rassurer et faire comprendre immédiatement le niveau de rendu.'
-      : 'Imagery designed to create desire, reassure and instantly show the level of finish.',
+      ? 'Quelques images pour ressentir l’univers, le niveau de finition et l’élégance du rendu.'
+      : 'A few images to feel the atmosphere, the finishing level and the elegance of the result.',
 
     processTitle: isFr ? 'Comment ça fonctionne' : 'How it works',
     processText: isFr
-      ? 'Un parcours simple, rapide et premium pour transformer une visite en vrai échange.'
-      : 'A simple, fast and premium process turning a visit into a real conversation.',
+      ? 'Un échange simple, rapide et soigné pour avancer sereinement sur votre projet.'
+      : 'A simple, fast and refined exchange to move forward with confidence on your project.',
 
     seoTitle1: isFr
       ? 'Photographe et vidéaste premium en France'
@@ -137,8 +135,8 @@ export default function HomePage({
       ? 'Prix photographe et vidéaste : comment choisir ?'
       : 'Photographer and videographer pricing: how to choose?',
     seoText2: isFr
-      ? 'Le prix d’un photographe ou d’un vidéaste dépend du type de projet, du temps de présence, du niveau de couverture, du nombre de livrables et du rendu attendu. SOREL Studio propose des repères de collections clairs pour aider à mieux comprendre les niveaux de prestation et orienter rapidement vers la bonne formule.'
-      : 'The price of a photographer or videographer depends on the type of project, hours of presence, level of coverage, number of deliverables and expected finish. SOREL Studio offers clear collection markers to help understand service levels and quickly orient users toward the right package.',
+      ? 'Le prix d’un photographe ou d’un vidéaste dépend du type de projet, du temps de présence, du niveau de couverture, du nombre de livrables et du rendu attendu. SOREL Studio propose des collections claires pour aider à mieux comprendre les niveaux de prestation et orienter vers la formule la plus adaptée.'
+      : 'The price of a photographer or videographer depends on the type of project, hours of presence, level of coverage, number of deliverables and expected finish. SOREL Studio offers clear collections to help understand service levels and guide clients toward the most suitable option.',
 
     faqTitle: isFr ? 'Questions fréquentes' : 'Frequently asked questions',
 
@@ -233,7 +231,7 @@ export default function HomePage({
         {
           title: 'Mariage Photo',
           price: 'À partir de 1 490 €',
-          text: 'Collections claires avec présence, photos retouchées, galerie privée et livraison HD.',
+          text: 'Collections avec présence, photos retouchées, galerie privée et livraison HD.',
         },
         {
           title: 'Mariage Vidéo',
@@ -251,7 +249,7 @@ export default function HomePage({
         {
           title: 'Wedding Photography',
           price: 'From €1,490',
-          text: 'Clear collections with coverage time, edited photos, private gallery and HD delivery.',
+          text: 'Collections with coverage time, edited photos, private gallery and HD delivery.',
         },
         {
           title: 'Wedding Video',
@@ -274,15 +272,15 @@ export default function HomePage({
         },
         {
           title: 'Une réponse rapide',
-          text: 'Disponibilités vérifiées rapidement et premier échange clair pour ne pas perdre l’élan du prospect.',
+          text: 'Disponibilités vérifiées rapidement et premier échange clair pour avancer sans attendre.',
         },
         {
           title: 'Une structure lisible',
-          text: 'Des pages dédiées, des collections claires et des CTA directs pour transformer plus facilement.',
+          text: 'Des pages dédiées, des collections claires et des parcours simples pour mieux se projeter.',
         },
         {
           title: 'Une vraie cohérence de marque',
-          text: 'Photo, vidéo, landing pages et discours commercial avancent ensemble dans une même direction.',
+          text: 'Photo, vidéo, pages de vente et discours avancent ensemble dans une même direction.',
         },
       ]
     : [
@@ -292,32 +290,32 @@ export default function HomePage({
         },
         {
           title: 'Fast reply',
-          text: 'Availability checked quickly and a clear first exchange so momentum is not lost.',
+          text: 'Availability checked quickly and a clear first exchange to move forward without delay.',
         },
         {
           title: 'Readable structure',
-          text: 'Dedicated pages, clear collections and direct CTAs to convert more easily.',
+          text: 'Dedicated pages, clear collections and simple journeys to help clients project themselves.',
         },
         {
           title: 'True brand consistency',
-          text: 'Photo, video, landing pages and commercial messaging all move in the same direction.',
+          text: 'Photo, video, sales pages and messaging all move in the same direction.',
         },
       ];
 
   const processSteps = isFr
     ? [
-        'Le visiteur identifie rapidement son besoin',
-        'Il découvre une page dédiée claire et premium',
-        'Il comprend le niveau d’offre et les prix de départ',
-        'Il vérifie les disponibilités ou appelle directement',
-        'Le lead arrive qualifié et plus prêt à convertir',
+        'Vous identifiez rapidement la prestation qui correspond à votre projet',
+        'Vous découvrez une page dédiée claire et premium',
+        'Vous comprenez le niveau d’offre et les collections proposées',
+        'Vous vérifiez les disponibilités ou nous contactez directement',
+        'Nous échangeons rapidement sur votre besoin',
       ]
     : [
-        'The visitor quickly identifies their need',
-        'They discover a clear and premium dedicated page',
-        'They understand offer level and starting prices',
-        'They check availability or call directly',
-        'The lead arrives more qualified and closer to conversion',
+        'You quickly identify the service matching your project',
+        'You discover a clear and premium dedicated page',
+        'You understand the offer level and the proposed collections',
+        'You check availability or contact us directly',
+        'We quickly discuss your needs',
       ];
 
   const faqItems = isFr
@@ -764,11 +762,11 @@ export default function HomePage({
             className="font-display text-4xl md:text-6xl font-light text-sorel-cream leading-tight mb-6 max-w-3xl mx-auto"
             style={{ letterSpacing: '-0.02em' }}
           >
-            {t.finalTitle}
+            {page.finalTitle}
           </h2>
 
           <p className="text-sm text-sorel-cream/90 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
-            {t.finalText}
+            {page.finalText}
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-12">
@@ -786,14 +784,14 @@ export default function HomePage({
               href={`/${locale}/${isFr ? 'reserver' : 'book'}`}
               className="bg-sorel-cream text-sorel-black text-[11px] font-medium tracking-[0.15em] uppercase px-10 py-4 inline-flex items-center gap-3 transition-all duration-500 hover:bg-sorel-champagne"
             >
-              {t.finalPrimary}
+              {page.finalButton}
               <ArrowRight size={14} />
             </Link>
             <a
               href={`tel:${brand.phoneRaw}`}
               className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/85 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
             >
-              {t.finalSecondary}
+              {page.finalContact}
               <ArrowRight size={12} />
             </a>
           </div>
