@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight,
-  Check,
   Phone,
   Camera,
   Film,
@@ -59,17 +58,6 @@ export default function HomePage({
     heroText: isFr
       ? 'Mariage, événements privés, entreprise, contenus haut de gamme : SOREL Studio crée des images élégantes, fortes et intemporelles. Basé à Paris, disponible dans toute la France.'
       : 'Wedding, private events, corporate coverage and premium visual content: SOREL Studio creates elegant, powerful and timeless imagery. Based in Paris, available throughout France.',
-    heroBadges: isFr
-      ? [
-          'Basé à Paris · Toute la France',
-          'Photo seule, vidéo seule ou duo',
-          'Réponse sous 24h',
-        ]
-      : [
-          'Based in Paris · All France',
-          'Photo only, video only or duo',
-          'Reply within 24h',
-        ],
     heroPrimary: isFr ? 'Vérifier la disponibilité' : 'Check availability',
     heroSecondary: isFr ? 'Voir les réalisations' : 'View portfolio',
 
@@ -83,9 +71,7 @@ export default function HomePage({
       ? 'L’objectif n’est pas seulement de produire de belles images, mais de créer un souvenir fort, une présence visuelle juste et une expérience haut de gamme du premier échange à la livraison.'
       : 'The goal is not only to create beautiful imagery, but to deliver a strong memory, a precise visual presence and a high-end experience from the first exchange to the final delivery.',
 
-    offerTitle: isFr
-      ? 'Choisissez votre univers'
-      : 'Choose your world',
+    offerTitle: isFr ? 'Choisissez votre univers' : 'Choose your world',
     offerText: isFr
       ? 'Trois entrées principales pour répondre vite à l’intention du visiteur et orienter vers la bonne page de vente.'
       : 'Three main entry points to quickly answer user intent and direct them to the right sales page.',
@@ -94,7 +80,9 @@ export default function HomePage({
     weddingText: isFr
       ? 'Photo, vidéo ou formule complète pour raconter votre mariage avec élégance, émotion et cohérence.'
       : 'Photo, video or full coverage to tell your wedding story with elegance, emotion and coherence.',
-    weddingCta: isFr ? 'Découvrir les offres mariage' : 'Discover wedding collections',
+    weddingCta: isFr
+      ? 'Découvrir les offres mariage'
+      : 'Discover wedding collections',
 
     photoTitle: isFr ? 'Photographe Mariage' : 'Wedding Photography',
     photoText: isFr
@@ -115,9 +103,7 @@ export default function HomePage({
       ? 'Une approche premium pour les mariages, les événements privés, les projets corporate et les productions visuelles exigeantes.'
       : 'A premium approach for weddings, private events, corporate projects and demanding visual productions.',
 
-    pricingTitle: isFr
-      ? 'Repères de collections'
-      : 'Collection markers',
+    pricingTitle: isFr ? 'Repères de collections' : 'Collection markers',
     pricingText: isFr
       ? 'Des prix de départ clairs pour rassurer, qualifier et aider à la prise de décision.'
       : 'Clear starting prices to reassure, qualify and help decision-making.',
@@ -136,9 +122,7 @@ export default function HomePage({
       ? 'Des images pensées pour donner envie, rassurer et faire comprendre immédiatement le niveau de rendu.'
       : 'Imagery designed to create desire, reassure and instantly show the level of finish.',
 
-    processTitle: isFr
-      ? 'Comment ça fonctionne'
-      : 'How it works',
+    processTitle: isFr ? 'Comment ça fonctionne' : 'How it works',
     processText: isFr
       ? 'Un parcours simple, rapide et premium pour transformer une visite en vrai échange.'
       : 'A simple, fast and premium process turning a visit into a real conversation.',
@@ -158,9 +142,7 @@ export default function HomePage({
 
     faqTitle: isFr ? 'Questions fréquentes' : 'Frequently asked questions',
 
-    finalTitle: isFr
-      ? 'Parlez-nous de votre projet'
-      : 'Tell us about your project',
+    finalTitle: isFr ? 'Parlez-nous de votre projet' : 'Tell us about your project',
     finalText: isFr
       ? 'Mariage, shooting personnel, événement privé, entreprise ou production visuelle : indiquez-nous votre date, votre lieu et votre besoin. Nous vous répondons sous 24h.'
       : 'Wedding, personal shooting, private event, corporate or visual production: tell us your date, your location and your need. We reply within 24h.',
@@ -405,20 +387,9 @@ export default function HomePage({
               {t.heroTitle}
             </h1>
 
-            <p className="text-sm md:text-base text-sorel-cream/80 font-light leading-[1.9] max-w-2xl mb-10">
+            <p className="text-sm md:text-base text-sorel-cream/80 font-light leading-[1.9] max-w-2xl mb-8">
               {t.heroText}
             </p>
-
-            <div className="flex flex-wrap gap-3 mb-12">
-              {t.heroBadges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center rounded-full border border-sorel-cream/15 bg-sorel-cream/5 px-4 py-2 text-[11px] tracking-[0.12em] uppercase text-sorel-cream/85"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link
@@ -777,9 +748,9 @@ export default function HomePage({
           <img
             src="https://images.pexels.com/photos/33964851/pexels-photo-33964851.jpeg?auto=compress&cs=tinysrgb&w=1800"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-sorel-black/82" />
+          <div className="absolute inset-0 bg-sorel-black/90" />
         </div>
 
         <div className="sorel-container sorel-section relative z-10 text-center">
@@ -796,7 +767,7 @@ export default function HomePage({
             {t.finalTitle}
           </h2>
 
-          <p className="text-sm text-sorel-cream/75 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
+          <p className="text-sm text-sorel-cream/90 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
             {t.finalText}
           </p>
 
@@ -820,7 +791,7 @@ export default function HomePage({
             </Link>
             <a
               href={`tel:${brand.phoneRaw}`}
-              className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/75 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
+              className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/85 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
             >
               {t.finalSecondary}
               <ArrowRight size={12} />
