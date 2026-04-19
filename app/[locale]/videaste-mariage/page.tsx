@@ -7,7 +7,6 @@ import {
   Sparkles,
   Film,
   HeartHandshake,
-  Clapperboard,
   PlayCircle,
 } from 'lucide-react';
 import { buildMetadata } from '@/lib/seo';
@@ -57,17 +56,6 @@ export default function VideasteMariagePage({
     heroText: isFr
       ? 'Un film de mariage élégant, vivant et haut de gamme pour revivre l’intensité de votre journée avec émotion, rythme et cohérence. Basé à Paris, SOREL Studio intervient dans toute la France.'
       : 'An elegant, vivid and high-end wedding film crafted to let you relive your day with emotion, rhythm and coherence. Based in Paris, SOREL Studio works throughout France.',
-    heroBadges: isFr
-      ? [
-          'Film de mariage premium',
-          'Réponse sous 24h',
-          'Basé à Paris · Toute la France',
-        ]
-      : [
-          'Premium wedding film',
-          'Reply within 24h',
-          'Based in Paris · All France',
-        ],
     ctaPrimary: isFr ? 'Vérifier la disponibilité' : 'Check availability',
     ctaSecondary: isFr ? 'Voir les collections' : 'View collections',
 
@@ -381,20 +369,9 @@ export default function VideasteMariagePage({
               {page.heroTitle}
             </h1>
 
-            <p className="text-sm md:text-base text-sorel-cream/80 font-light leading-[1.9] max-w-2xl mb-10">
+            <p className="text-sm md:text-base text-sorel-cream/80 font-light leading-[1.9] max-w-2xl mb-8">
               {page.heroText}
             </p>
-
-            <div className="flex flex-wrap gap-3 mb-12">
-              {page.heroBadges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center rounded-full border border-sorel-cream/15 bg-sorel-cream/5 px-4 py-2 text-[11px] tracking-[0.12em] uppercase text-sorel-cream/85"
-                >
-                  {badge}
-                </span>
-              ))}
-            </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link
@@ -702,9 +679,9 @@ export default function VideasteMariagePage({
           <img
             src="https://images.pexels.com/photos/33964851/pexels-photo-33964851.jpeg?auto=compress&cs=tinysrgb&w=1800"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-sorel-black/82" />
+          <div className="absolute inset-0 bg-sorel-black/90" />
         </div>
 
         <div className="sorel-container sorel-section relative z-10 text-center">
@@ -721,7 +698,7 @@ export default function VideasteMariagePage({
             {page.finalTitle}
           </h2>
 
-          <p className="text-sm text-sorel-cream/75 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
+          <p className="text-sm text-sorel-cream/90 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
             {page.finalText}
           </p>
 
@@ -745,7 +722,7 @@ export default function VideasteMariagePage({
             </Link>
             <a
               href={`tel:${brand.phoneRaw}`}
-              className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/75 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
+              className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/85 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
             >
               {page.finalContact}
               <ArrowRight size={12} />
