@@ -37,9 +37,9 @@ export async function generateMetadata({
     title: 'Premium Photographer & Videographer in France | SOREL Studio',
     description:
       'Premium photographer and videographer for weddings, private events and corporate projects in France. Based in Paris, SOREL Studio offers photo, video and duo coverage with reply within 24h.',
-      locale,
-      path: '/en',
-    });
+    locale,
+    path: '/en',
+  });
 }
 
 export default function HomePage({
@@ -106,9 +106,7 @@ export default function HomePage({
       ? 'Des collections claires pour vous aider à vous projeter selon votre besoin.'
       : 'Clear collections to help you project yourself according to your needs.',
 
-    whyTitle: isFr
-      ? 'Pourquoi choisir SOREL'
-      : 'Why choose SOREL',
+    whyTitle: isFr ? 'Pourquoi choisir SOREL' : 'Why choose SOREL',
     whyText: isFr
       ? 'Une approche haut de gamme, une direction visuelle cohérente et une vraie fluidité dans l’expérience.'
       : 'A high-end approach, a coherent visual direction and a truly fluid experience.',
@@ -762,11 +760,11 @@ export default function HomePage({
             className="font-display text-4xl md:text-6xl font-light text-sorel-cream leading-tight mb-6 max-w-3xl mx-auto"
             style={{ letterSpacing: '-0.02em' }}
           >
-            {page.finalTitle}
+            {t.finalTitle}
           </h2>
 
           <p className="text-sm text-sorel-cream/90 font-light mb-10 max-w-2xl mx-auto leading-[1.9]">
-            {page.finalText}
+            {t.finalText}
           </p>
 
           <div className="flex items-center justify-center gap-4 mb-12">
@@ -784,14 +782,14 @@ export default function HomePage({
               href={`/${locale}/${isFr ? 'reserver' : 'book'}`}
               className="bg-sorel-cream text-sorel-black text-[11px] font-medium tracking-[0.15em] uppercase px-10 py-4 inline-flex items-center gap-3 transition-all duration-500 hover:bg-sorel-champagne"
             >
-              {page.finalButton}
+              {t.finalPrimary}
               <ArrowRight size={14} />
             </Link>
             <a
               href={`tel:${brand.phoneRaw}`}
               className="text-[11px] font-medium tracking-[0.15em] uppercase text-sorel-cream/85 hover:text-sorel-white transition-colors inline-flex items-center gap-2"
             >
-              {page.finalContact}
+              {t.finalSecondary}
               <ArrowRight size={12} />
             </a>
           </div>
