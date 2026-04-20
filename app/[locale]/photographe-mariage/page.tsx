@@ -345,7 +345,7 @@ export default function PhotographeMariagePage({
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-sorel-black">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/33066203/pexels-photo-33066203.jpeg?auto=compress&cs=tinysrgb&w=1800"
+            src="https://images.pexels.com/photos/31888305/pexels-photo-31888305.jpeg?auto=compress&cs=tinysrgb&w=1800"
             alt=""
             className="w-full h-full object-cover opacity-35"
           />
