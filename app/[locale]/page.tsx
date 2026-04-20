@@ -466,7 +466,7 @@ export default function HomePage({
                 href: `/${locale}/photo-video-mariage`,
                 cta: t.weddingCta,
                 image:
-                  'https://images.pexels.com/photos/33642048/pexels-photo-33642048.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                  'https://images.pexels.com/photos/31888283/pexels-photo-31888283.jpeg?auto=compress&cs=tinysrgb&w=1200',
               },
               {
                 title: t.photoTitle,
@@ -474,7 +474,7 @@ export default function HomePage({
                 href: `/${locale}/photographe-mariage`,
                 cta: t.photoCta,
                 image:
-                  'https://images.pexels.com/photos/33066203/pexels-photo-33066203.jpeg?auto=compress&cs=tinysrgb&w=1200',
+                  'https://images.pexels.com/photos/32392448/pexels-photo-32392448.jpeg?auto=compress&cs=tinysrgb&w=1200',
               },
               {
                 title: t.videoTitle,
@@ -644,12 +644,12 @@ export default function HomePage({
 
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[260px] gap-3 mb-10">
             {[
-              'https://images.pexels.com/photos/33642048/pexels-photo-33642048.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/32392448/pexels-photo-32392448.jpeg?auto=compress&cs=tinysrgb&w=900',
               'https://images.pexels.com/photos/33066203/pexels-photo-33066203.jpeg?auto=compress&cs=tinysrgb&w=900',
               'https://images.pexels.com/photos/33964853/pexels-photo-33964853.jpeg?auto=compress&cs=tinysrgb&w=900',
               'https://images.pexels.com/photos/30208853/pexels-photo-30208853.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/17627736/pexels-photo-17627736.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/19495662/pexels-photo-19495662.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/29034615/pexels-photo-29034615.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/11813985/pexels-photo-11813985.jpeg?auto=compress&cs=tinysrgb&w=900',
             ].map((src, index) => (
               <div
                 key={src}
