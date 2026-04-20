@@ -11,7 +11,6 @@ interface BookingFormProps {
     service: string;
     city: string;
     mediaType: string;
-    budget: string;
     name: string;
     email: string;
     phone: string;
@@ -30,23 +29,6 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
 
   const services = locale === 'fr' ? servicesFr : servicesEn;
 
-  const budgetOptions =
-    locale === 'fr'
-      ? [
-          'Moins de 1 000 €',
-          '1 000 – 2 500 €',
-          '2 500 – 5 000 €',
-          '5 000 – 10 000 €',
-          'Plus de 10 000 €',
-        ]
-      : [
-          'Less than €1,000',
-          '€1,000 – €2,500',
-          '€2,500 – €5,000',
-          '€5,000 – €10,000',
-          'More than €10,000',
-        ];
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -57,7 +39,6 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       service: formData.get('service'),
       city: formData.get('city'),
       mediaType: formData.get('mediaType'),
-      budget: formData.get('budget'),
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
@@ -76,24 +57,24 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       });
 
       if (!res.ok) {
-  alert(
-    locale === 'fr'
-      ? "Une erreur s'est produite. Merci de réessayer."
-      : 'An error occurred. Please try again.'
-  );
-  return;
-}
+        alert(
+          locale === 'fr'
+            ? "Une erreur s'est produite. Merci de réessayer."
+            : 'An error occurred. Please try again.'
+        );
+        return;
+      }
 
-if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-  (window as any).gtag('event', 'conversion', {
-    send_to: 'AW-18089402701/sHd_CNe45pscEM3C2bFD',
-    value: 1.0,
-    currency: 'EUR',
-  });
-}
+      if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-18089402701/sHd_CNe45pscEM3C2bFD',
+          value: 1.0,
+          currency: 'EUR',
+        });
+      }
 
-setSubmitted(true);
-form.reset();
+      setSubmitted(true);
+      form.reset();
     } catch (error) {
       console.error(error);
       alert(
@@ -130,7 +111,7 @@ form.reset();
       <div className="bg-sorel-white/60 border border-sorel-champagne/20 p-5">
         <p className="text-xs text-sorel-graphite font-light leading-[1.8]">
           {locale === 'fr'
-            ? 'Les disponibilites sont a verifier aupres de notre equipe. Soumettez votre demande et nous vous confirmerons les creneaux disponibles sous 24h.'
+            ? 'Les disponibilités sont à vérifier auprès de notre équipe. Soumettez votre demande et nous vous confirmerons les créneaux disponibles sous 24h.'
             : 'Availability must be confirmed with our team. Submit your request and we will confirm available slots within 24 hours.'}
         </p>
       </div>
@@ -158,26 +139,13 @@ form.reset();
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-        <div>
-          <label className={labelClass}>{t.mediaType}</label>
-          <select name="mediaType" className={inputClass}>
-            <option value="photo">{t.photo}</option>
-            <option value="video">{t.video}</option>
-            <option value="both">{t.both}</option>
-          </select>
-        </div>
-        <div>
-          <label className={labelClass}>{t.budget}</label>
-          <select name="budget" className={inputClass}>
-            <option value="">&mdash;</option>
-            {budgetOptions.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </div>
+      <div>
+        <label className={labelClass}>{t.mediaType}</label>
+        <select name="mediaType" className={inputClass}>
+          <option value="photo">{t.photo}</option>
+          <option value="video">{t.video}</option>
+          <option value="both">{t.both}</option>
+        </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
