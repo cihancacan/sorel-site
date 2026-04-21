@@ -215,6 +215,7 @@ export default function VideasteMariagePage({
             'Accompagnement en amont',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=essentielle`,
         },
         {
           name: 'Collection Signature',
@@ -230,6 +231,7 @@ export default function VideasteMariagePage({
             'Accompagnement en amont',
           ],
           featured: true,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=signature`,
         },
         {
           name: 'Collection Maison',
@@ -245,6 +247,7 @@ export default function VideasteMariagePage({
             'Option contenu vertical possible',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=maison`,
         },
       ]
     : [
@@ -261,6 +264,7 @@ export default function VideasteMariagePage({
             'Guidance beforehand',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=essential`,
         },
         {
           name: 'Signature Collection',
@@ -276,6 +280,7 @@ export default function VideasteMariagePage({
             'Guidance beforehand',
           ],
           featured: true,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=signature`,
         },
         {
           name: 'Maison Collection',
@@ -291,6 +296,7 @@ export default function VideasteMariagePage({
             'Vertical content option available',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=videaste-mariage&mediaType=video&pack=maison`,
         },
       ];
 
@@ -500,7 +506,7 @@ export default function VideasteMariagePage({
                 </div>
 
                 <Link
-                  href={`/${locale}/${isFr ? 'reserver' : 'book'}`}
+                  href={collection.href}
                   className={`inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 ${
                     collection.featured
                       ? 'bg-sorel-cream text-sorel-black hover:bg-sorel-champagne'
