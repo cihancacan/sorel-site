@@ -16,8 +16,54 @@ function escapeHtml(value: string = '') {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
+    .replace(/\"/g, '&quot;')
     .replace(/'/g, '&#039;')
+}
+
+function formatService(service: string = '') {
+  switch (service) {
+    case 'photo-video-mariage':
+      return 'Photo & Vidéo Mariage'
+    case 'photographe-mariage':
+      return 'Photographe Mariage'
+    case 'videaste-mariage':
+      return 'Vidéaste Mariage'
+    case 'photo-video-evenement-prive':
+      return 'Photo & Vidéo Événement Privé'
+    case 'photo-video-evenement-entreprise':
+      return 'Photo & Vidéo Événement Entreprise'
+    case 'studio-production':
+      return 'Studio & Production'
+    default:
+      return service || '-'
+  }
+}
+
+function formatMediaType(mediaType: string = '') {
+  switch (mediaType) {
+    case 'photo':
+      return 'Photo'
+    case 'video':
+      return 'Vidéo'
+    case 'both':
+      return 'Photo + Vidéo'
+    default:
+      return mediaType || '-'
+  }
+}
+
+function formatPack(pack: string = '') {
+  switch (pack) {
+    case 'essentielle':
+    case 'essential':
+      return 'Collection Essentielle'
+    case 'signature':
+      return 'Collection Signature'
+    case 'maison':
+      return 'Collection Maison'
+    default:
+      return pack || '-'
+  }
 }
 
 export async function POST(req: Request) {
@@ -28,7 +74,7 @@ export async function POST(req: Request) {
       service = '',
       city = '',
       mediaType = '',
-      budget = '',
+      pack = '',
       name = '',
       email = '',
       phone = '',
@@ -42,15 +88,26 @@ export async function POST(req: Request) {
       )
     }
 
+    const formatted = {
+      service: formatService(service),
+      city: city || '-',
+      mediaType: formatMediaType(mediaType),
+      pack: formatPack(pack),
+      name: name || '-',
+      email: email || '-',
+      phone: phone || '-',
+      message: message || '-',
+    }
+
     const data = {
-      service: escapeHtml(service),
-      city: escapeHtml(city),
-      mediaType: escapeHtml(mediaType),
-      budget: escapeHtml(budget),
-      name: escapeHtml(name),
-      email: escapeHtml(email),
-      phone: escapeHtml(phone),
-      message: escapeHtml(message),
+      service: escapeHtml(formatted.service),
+      city: escapeHtml(formatted.city),
+      mediaType: escapeHtml(formatted.mediaType),
+      pack: escapeHtml(formatted.pack),
+      name: escapeHtml(formatted.name),
+      email: escapeHtml(formatted.email),
+      phone: escapeHtml(formatted.phone),
+      message: escapeHtml(formatted.message),
     }
 
     await transporter.sendMail({
@@ -64,24 +121,24 @@ export async function POST(req: Request) {
           <p><strong>Nom :</strong> ${data.name}</p>
           <p><strong>Email :</strong> ${data.email}</p>
           <p><strong>Téléphone :</strong> ${data.phone}</p>
-          <p><strong>Service :</strong> ${data.service || '-'}</p>
-          <p><strong>Ville :</strong> ${data.city || '-'}</p>
-          <p><strong>Type :</strong> ${data.mediaType || '-'}</p>
-          <p><strong>Budget :</strong> ${data.budget || '-'}</p>
-          <p><strong>Message :</strong><br>${data.message || '-'}</p>
+          <p><strong>Service :</strong> ${data.service}</p>
+          <p><strong>Ville :</strong> ${data.city}</p>
+          <p><strong>Type :</strong> ${data.mediaType}</p>
+          <p><strong>Formule choisie :</strong> ${data.pack}</p>
+          <p><strong>Message :</strong><br>${data.message}</p>
         </div>
       `,
       text: `
 Nouvelle demande de réservation
 
-Nom: ${name}
-Email: ${email}
-Téléphone: ${phone}
-Service: ${service}
-Ville: ${city}
-Type: ${mediaType}
-Budget: ${budget}
-Message: ${message}
+Nom: ${formatted.name}
+Email: ${formatted.email}
+Téléphone: ${formatted.phone}
+Service: ${formatted.service}
+Ville: ${formatted.city}
+Type: ${formatted.mediaType}
+Formule choisie: ${formatted.pack}
+Message: ${formatted.message}
       `,
     })
 
