@@ -215,6 +215,7 @@ export default function PhotographeMariagePage({
             'Accompagnement en amont',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=essentielle`,
         },
         {
           name: 'Collection Signature',
@@ -230,6 +231,7 @@ export default function PhotographeMariagePage({
             'Accompagnement en amont',
           ],
           featured: true,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=signature`,
         },
         {
           name: 'Collection Maison',
@@ -245,6 +247,7 @@ export default function PhotographeMariagePage({
             'Options album / tirages possibles',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=maison`,
         },
       ]
     : [
@@ -261,6 +264,7 @@ export default function PhotographeMariagePage({
             'Guidance beforehand',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=essential`,
         },
         {
           name: 'Signature Collection',
@@ -276,6 +280,7 @@ export default function PhotographeMariagePage({
             'Guidance beforehand',
           ],
           featured: true,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=signature`,
         },
         {
           name: 'Maison Collection',
@@ -291,6 +296,7 @@ export default function PhotographeMariagePage({
             'Album / print options available',
           ],
           featured: false,
+          href: `/${locale}/${isFr ? 'reserver' : 'book'}?service=photographe-mariage&mediaType=photo&pack=maison`,
         },
       ];
 
@@ -500,7 +506,7 @@ export default function PhotographeMariagePage({
                 </div>
 
                 <Link
-                  href={`/${locale}/${isFr ? 'reserver' : 'book'}`}
+                  href={collection.href}
                   className={`inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 ${
                     collection.featured
                       ? 'bg-sorel-cream text-sorel-black hover:bg-sorel-champagne'
