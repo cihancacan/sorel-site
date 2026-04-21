@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Send, CircleCheck as CheckCircle } from 'lucide-react';
 import { servicesFr } from '@/data/services.fr';
 import { servicesEn } from '@/data/services.en';
@@ -27,7 +28,28 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const searchParams = useSearchParams();
+
+  const prefilledService = searchParams.get('service') || '';
+  const prefilledMediaType = searchParams.get('mediaType') || 'photo';
+  const prefilledPack = searchParams.get('pack') || '';
+
   const services = locale === 'fr' ? servicesFr : servicesEn;
+
+  const packLabel =
+    prefilledPack === 'essentielle' || prefilledPack === 'essential'
+      ? locale === 'fr'
+        ? 'Collection Essentielle'
+        : 'Essential Collection'
+      : prefilledPack === 'signature'
+      ? locale === 'fr'
+        ? 'Collection Signature'
+        : 'Signature Collection'
+      : prefilledPack === 'maison'
+      ? locale === 'fr'
+        ? 'Collection Maison'
+        : 'Maison Collection'
+      : prefilledPack;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,6 +61,7 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       service: formData.get('service'),
       city: formData.get('city'),
       mediaType: formData.get('mediaType'),
+      pack: prefilledPack || '',
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
@@ -116,10 +139,25 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
         </p>
       </div>
 
+      {packLabel && (
+        <div className="bg-sorel-white/60 border border-sorel-champagne/20 p-5">
+          <p className="text-xs text-sorel-graphite font-light leading-[1.8]">
+            {locale === 'fr'
+              ? `Vous avez sélectionné ${packLabel}.`
+              : `You selected ${packLabel}.`}
+          </p>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
           <label className={labelClass}>{t.service}</label>
-          <select name="service" className={inputClass} required>
+          <select
+            name="service"
+            className={inputClass}
+            required
+            defaultValue={prefilledService}
+          >
             <option value="">&mdash;</option>
             {services.map((s) => (
               <option key={s.slug} value={s.slug}>
@@ -128,6 +166,7 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
             ))}
           </select>
         </div>
+
         <div>
           <label className={labelClass}>{t.city}</label>
           <input
@@ -141,7 +180,11 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
 
       <div>
         <label className={labelClass}>{t.mediaType}</label>
-        <select name="mediaType" className={inputClass}>
+        <select
+          name="mediaType"
+          className={inputClass}
+          defaultValue={prefilledMediaType}
+        >
           <option value="photo">{t.photo}</option>
           <option value="video">{t.video}</option>
           <option value="both">{t.both}</option>
