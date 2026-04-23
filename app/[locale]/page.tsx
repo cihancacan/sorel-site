@@ -53,7 +53,7 @@ export default function HomePage({
   const t = {
     heroLabel: isFr ? 'Photo & Film Premium' : 'Premium Photo & Film',
     heroTitle: isFr
-      ? 'Photographe & Vidéaste Premium en France'
+      ? 'Photographe & Vidéaste Premium pour Mariages & Événements'
       : 'Premium Photographer & Videographer in France',
     heroText: isFr
       ? 'Mariage, événements privés, entreprise, contenus haut de gamme : SOREL Studio crée des images élégantes, fortes et intemporelles. Basé à Paris, disponible dans toute la France.'
