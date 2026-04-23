@@ -56,7 +56,7 @@ export default function HomePage({
       ? 'Photographe & Vidéaste Premium pour Mariages & Événements'
       : 'Premium Photographer & Videographer in France',
     heroText: isFr
-      ? 'Mariage, événements privés, entreprise, contenus haut de gamme : SOREL Studio crée des images élégantes, fortes et intemporelles. Basé à Paris, disponible dans toute la France.'
+      ? 'Mariage, événements privés, entreprise, contenus haut de gamme : SOREL Studio crée des images élégantes, fortes et intemporelles. Basé à Paris, déplacements partout en France.'
       : 'Wedding, private events, corporate coverage and premium visual content: SOREL Studio creates elegant, powerful and timeless imagery. Based in Paris, available throughout France.',
     heroPrimary: isFr ? 'Vérifier la disponibilité' : 'Check availability',
     heroSecondary: isFr ? 'Voir les réalisations' : 'View portfolio',
