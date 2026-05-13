@@ -209,13 +209,14 @@ export default function PhotoVideoMariagePage({
     ? [
         {
           name: 'Collection Essentielle',
-          price: 'À partir de 2 790 €',
+          price: 'À partir de 2 490 €',
           desc: 'Pour les couples qui souhaitent couvrir les temps forts avec une formule claire, élégante et complète.',
           items: [
             '1 photographe + 1 vidéaste',
             '6 heures de présence',
-            '200 à 300 photos retouchées',
-            'Film de mariage de 3 à 5 min',
+            'Galerie photo complète',
+            'Film de mariage long',
+            'Teaser court',
             'Galerie privée en ligne',
             'Livraison HD',
           ],
@@ -224,13 +225,13 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Collection Signature',
-          price: 'À partir de 4 190 €',
+          price: 'À partir de 3 990 €',
           desc: 'La formule idéale pour une couverture plus complète, plus confortable et plus riche en souvenirs.',
           items: [
             '1 photographe + 1 vidéaste',
             '10 heures de présence',
-            '400 à 600 photos retouchées',
-            'Film de mariage de 5 à 8 min',
+            'Galerie photo complète',
+            'Film de mariage long',
             'Teaser court',
             'Galerie privée',
             'Livraison HD',
@@ -241,13 +242,13 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Collection Maison',
-          price: 'À partir de 5 790 €',
+          price: 'À partir de 4 990 €',
           desc: 'Pour une couverture haut de gamme pensée pour les mariages les plus complets et les projets les plus exigeants.',
           items: [
             'Couverture photo + vidéo premium',
             'Jusqu’à 12 heures de présence',
-            '600 à 800 photos retouchées',
-            'Film de mariage de 8 à 12 min',
+            'Galerie photo complète',
+            'Film de mariage long',
             'Teaser',
             'Galerie privée premium',
             'Livraison HD',
@@ -260,13 +261,14 @@ export default function PhotoVideoMariagePage({
     : [
         {
           name: 'Essential Collection',
-          price: 'From €2,790',
+          price: 'From €2,490',
           desc: 'For couples who want the key moments covered with a clear, elegant and complete package.',
           items: [
             '1 photographer + 1 videographer',
             '6 hours coverage',
-            '200 to 300 edited photos',
-            '3 to 5 min wedding film',
+            'Full photo gallery',
+            'Long wedding film',
+            'Short teaser',
             'Private online gallery',
             'HD delivery',
           ],
@@ -275,13 +277,13 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Signature Collection',
-          price: 'From €4,190',
+          price: 'From €3,990',
           desc: 'The ideal collection for more complete coverage, more comfort and a richer memory of the day.',
           items: [
             '1 photographer + 1 videographer',
             '10 hours coverage',
-            '400 to 600 edited photos',
-            '5 to 8 min wedding film',
+            'Full photo gallery',
+            'Long wedding film',
             'Short teaser',
             'Private gallery',
             'HD delivery',
@@ -292,13 +294,13 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Maison Collection',
-          price: 'From €5,790',
+          price: 'From €4,990',
           desc: 'For high-end coverage designed for the most complete weddings and the most demanding projects.',
           items: [
             'Premium photo + video coverage',
             'Up to 12 hours coverage',
-            '600 to 800 edited photos',
-            '8 to 12 min wedding film',
+            'Full photo gallery',
+            'Long wedding film',
             'Teaser',
             'Premium private gallery',
             'HD delivery',
