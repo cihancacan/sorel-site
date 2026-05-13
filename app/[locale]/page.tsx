@@ -238,7 +238,7 @@ export default function HomePage({
         },
         {
           title: 'Mariage Photo + Vidéo',
-          price: 'À partir de 2 790 €',
+          price: 'À partir de 2 490 €',
           text: 'La formule la plus complète pour une couverture cohérente, fluide et haut de gamme.',
           featured: true,
         },
@@ -256,7 +256,7 @@ export default function HomePage({
         },
         {
           title: 'Wedding Photo + Video',
-          price: 'From €2,790',
+          price: 'From €2,490',
           text: 'The most complete package for coherent, fluid and high-end coverage.',
           featured: true,
         },
