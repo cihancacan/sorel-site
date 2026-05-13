@@ -209,7 +209,7 @@ export default function PhotographeMariagePage({
           items: [
             '1 photographe',
             '6 heures de présence',
-            '200 à 300 photos retouchées',
+            'Galerie photo complète',
             'Galerie privée en ligne',
             'Livraison HD',
             'Accompagnement en amont',
@@ -224,7 +224,7 @@ export default function PhotographeMariagePage({
           items: [
             '1 photographe',
             '10 heures de présence',
-            '400 à 600 photos retouchées',
+            'Galerie photo complète',
             'Galerie privée',
             'Livraison HD',
             'Aperçu rapide',
@@ -240,7 +240,7 @@ export default function PhotographeMariagePage({
           items: [
             'Couverture photo premium',
             'Jusqu’à 12 heures de présence',
-            '600 à 800 photos retouchées',
+            'Galerie photo complète',
             'Galerie privée premium',
             'Livraison HD',
             'Aperçu rapide',
@@ -258,7 +258,7 @@ export default function PhotographeMariagePage({
           items: [
             '1 photographer',
             '6 hours coverage',
-            '200 to 300 edited photos',
+            'Full photo gallery',
             'Private online gallery',
             'HD delivery',
             'Guidance beforehand',
@@ -273,7 +273,7 @@ export default function PhotographeMariagePage({
           items: [
             '1 photographer',
             '10 hours coverage',
-            '400 to 600 edited photos',
+            'Full photo gallery',
             'Private gallery',
             'HD delivery',
             'Quick preview',
@@ -289,7 +289,7 @@ export default function PhotographeMariagePage({
           items: [
             'Premium photography coverage',
             'Up to 12 hours coverage',
-            '600 to 800 edited photos',
+            'Full photo gallery',
             'Premium private gallery',
             'HD delivery',
             'Quick preview',
