@@ -58,7 +58,7 @@ export default function HomePage({
     heroText: isFr
       ? 'Mariage, événements privés, entreprise, contenus haut de gamme : SOREL Studio crée des images élégantes, fortes et intemporelles. Basé à Paris, déplacements partout en France.'
       : 'Wedding, private events, corporate coverage and premium visual content: SOREL Studio creates elegant, powerful and timeless imagery. Based in Paris, available throughout France.',
-    heroPrimary: isFr ? 'Vérifier la disponibilité' : 'Check availability',
+    heroPrimary: isFr ? 'Voir les offres mariage' : 'See wedding offers',
     heroSecondary: isFr ? 'Voir les réalisations' : 'View portfolio',
 
     introTitle: isFr
@@ -388,13 +388,13 @@ export default function HomePage({
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Link
-                href={`/${locale}/${isFr ? 'reserver' : 'book'}`}
+              <a
+                href="#offres"
                 className="inline-flex items-center gap-3 bg-sorel-cream text-sorel-black text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-champagne"
               >
                 {t.heroPrimary}
                 <ArrowRight size={14} />
-              </Link>
+              </a>
               <Link
                 href={`/${locale}/${isFr ? 'realisations' : 'work'}`}
                 className="inline-flex items-center gap-3 border border-sorel-cream/40 text-sorel-cream text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-cream hover:text-sorel-black"
@@ -409,44 +409,7 @@ export default function HomePage({
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-sorel-cream to-transparent" />
       </section>
 
-      <section className="sorel-section bg-sorel-cream">
-        <div className="sorel-container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-center">
-            <div>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="sorel-divider" />
-                <p className="sorel-label">{isFr ? 'Positionnement' : 'Positioning'}</p>
-              </div>
-              <h2 className="sorel-heading text-4xl md:text-5xl mb-6">{t.introTitle}</h2>
-              <p className="text-sm text-sorel-graphite font-light leading-[2] mb-6">{t.introText1}</p>
-              <p className="text-sm text-sorel-graphite font-light leading-[2]">{t.introText2}</p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { icon: Sparkles, text: isFr ? 'Signature premium' : 'Premium signature' },
-                { icon: Clock3, text: isFr ? 'Réponse rapide' : 'Fast reply' },
-                { icon: MapPin, text: isFr ? 'Disponible en France' : 'Available in France' },
-                { icon: HeartHandshake, text: isFr ? 'Accompagnement fluide' : 'Fluid experience' },
-              ].map((item, index) => (
-                <div
-                  key={item.text}
-                  className={`border border-sorel-black/6 bg-sorel-white p-6 ${index === 0 ? 'sm:translate-y-3' : ''}`}
-                >
-                  <div className="w-10 h-10 rounded-full border border-sorel-champagne/25 flex items-center justify-center mb-5">
-                    <item.icon size={16} className="text-sorel-champagne" />
-                  </div>
-                  <p className="font-display text-xl font-light text-sorel-black leading-snug">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="sorel-section bg-sorel-white">
+      <section id="offres" className="sorel-section bg-sorel-white">
         <div className="sorel-container">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <div className="flex items-center justify-center gap-4 mb-8">
@@ -535,6 +498,47 @@ export default function HomePage({
         </div>
       </section>
 
+      <section className="sorel-section bg-sorel-white">
+        <div className="sorel-container">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="sorel-divider" />
+            <p className="sorel-label">{isFr ? 'Réalisations' : 'Portfolio'}</p>
+          </div>
+          <h2 className="sorel-heading text-4xl md:text-5xl mb-5">{t.portfolioTitle}</h2>
+          <p className="text-sm text-sorel-silver font-light leading-[1.9] max-w-2xl mb-10">{t.portfolioText}</p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[260px] gap-3 mb-10">
+            {[
+              'https://images.pexels.com/photos/32392448/pexels-photo-32392448.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/33066203/pexels-photo-33066203.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/33964853/pexels-photo-33964853.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/30208853/pexels-photo-30208853.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/29034615/pexels-photo-29034615.jpeg?auto=compress&cs=tinysrgb&w=900',
+              'https://images.pexels.com/photos/11813985/pexels-photo-11813985.jpeg?auto=compress&cs=tinysrgb&w=900',
+            ].map((src, index) => (
+              <div
+                key={src}
+                className={`overflow-hidden ${index === 0 ? 'col-span-2 row-span-2' : ''}`}
+              >
+                <img
+                  src={src}
+                  alt=""
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+
+          <Link
+            href={`/${locale}/${isFr ? 'realisations' : 'work'}`}
+            className="inline-flex items-center gap-3 bg-sorel-black text-sorel-cream text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-black/90"
+          >
+            {isFr ? 'Voir les réalisations' : 'View portfolio'}
+            <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
+
       <section className="sorel-section bg-sorel-cream">
         <div className="sorel-container">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -611,6 +615,43 @@ export default function HomePage({
 
       <section className="sorel-section bg-sorel-cream">
         <div className="sorel-container">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-20 items-center">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="sorel-divider" />
+                <p className="sorel-label">{isFr ? 'Positionnement' : 'Positioning'}</p>
+              </div>
+              <h2 className="sorel-heading text-4xl md:text-5xl mb-6">{t.introTitle}</h2>
+              <p className="text-sm text-sorel-graphite font-light leading-[2] mb-6">{t.introText1}</p>
+              <p className="text-sm text-sorel-graphite font-light leading-[2]">{t.introText2}</p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { icon: Sparkles, text: isFr ? 'Signature premium' : 'Premium signature' },
+                { icon: Clock3, text: isFr ? 'Réponse rapide' : 'Fast reply' },
+                { icon: MapPin, text: isFr ? 'Disponible en France' : 'Available in France' },
+                { icon: HeartHandshake, text: isFr ? 'Accompagnement fluide' : 'Fluid experience' },
+              ].map((item, index) => (
+                <div
+                  key={item.text}
+                  className={`border border-sorel-black/6 bg-sorel-white p-6 ${index === 0 ? 'sm:translate-y-3' : ''}`}
+                >
+                  <div className="w-10 h-10 rounded-full border border-sorel-champagne/25 flex items-center justify-center mb-5">
+                    <item.icon size={16} className="text-sorel-champagne" />
+                  </div>
+                  <p className="font-display text-xl font-light text-sorel-black leading-snug">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="sorel-section bg-sorel-cream">
+        <div className="sorel-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <div className="flex items-center gap-4 mb-8">
@@ -630,47 +671,6 @@ export default function HomePage({
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="sorel-section bg-sorel-white">
-        <div className="sorel-container">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="sorel-divider" />
-            <p className="sorel-label">{isFr ? 'Réalisations' : 'Portfolio'}</p>
-          </div>
-          <h2 className="sorel-heading text-4xl md:text-5xl mb-5">{t.portfolioTitle}</h2>
-          <p className="text-sm text-sorel-silver font-light leading-[1.9] max-w-2xl mb-10">{t.portfolioText}</p>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[260px] gap-3 mb-10">
-            {[
-              'https://images.pexels.com/photos/32392448/pexels-photo-32392448.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/33066203/pexels-photo-33066203.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/33964853/pexels-photo-33964853.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/30208853/pexels-photo-30208853.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/29034615/pexels-photo-29034615.jpeg?auto=compress&cs=tinysrgb&w=900',
-              'https://images.pexels.com/photos/11813985/pexels-photo-11813985.jpeg?auto=compress&cs=tinysrgb&w=900',
-            ].map((src, index) => (
-              <div
-                key={src}
-                className={`overflow-hidden ${index === 0 ? 'col-span-2 row-span-2' : ''}`}
-              >
-                <img
-                  src={src}
-                  alt=""
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-
-          <Link
-            href={`/${locale}/${isFr ? 'realisations' : 'work'}`}
-            className="inline-flex items-center gap-3 bg-sorel-black text-sorel-cream text-[11px] font-medium tracking-[0.15em] uppercase px-8 py-4 transition-all duration-500 hover:bg-sorel-black/90"
-          >
-            {isFr ? 'Voir les réalisations' : 'View portfolio'}
-            <ArrowRight size={14} />
-          </Link>
         </div>
       </section>
 
