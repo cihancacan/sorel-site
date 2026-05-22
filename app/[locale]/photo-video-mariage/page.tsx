@@ -209,7 +209,7 @@ export default function PhotoVideoMariagePage({
     ? [
         {
           name: 'Collection Essentielle',
-          price: 'À partir de 2 490 €',
+          price: 'À partir de 1 990 €',
           desc: 'Pour les couples qui souhaitent couvrir les temps forts avec une formule claire, élégante et complète.',
           items: [
             '1 photographe + 1 vidéaste',
@@ -225,11 +225,11 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Collection Signature',
-          price: 'À partir de 3 990 €',
+          price: 'À partir de 2 990 €',
           desc: 'La formule idéale pour une couverture plus complète, plus confortable et plus riche en souvenirs.',
           items: [
             '1 photographe + 1 vidéaste',
-            '10 heures de présence',
+            '8 heures de présence',
             'Galerie photo complète',
             'Film de mariage long',
             'Teaser court',
@@ -261,7 +261,7 @@ export default function PhotoVideoMariagePage({
     : [
         {
           name: 'Essential Collection',
-          price: 'From €2,490',
+          price: 'From €1,990',
           desc: 'For couples who want the key moments covered with a clear, elegant and complete package.',
           items: [
             '1 photographer + 1 videographer',
@@ -277,11 +277,11 @@ export default function PhotoVideoMariagePage({
         },
         {
           name: 'Signature Collection',
-          price: 'From €3,990',
+          price: 'From €2,990',
           desc: 'The ideal collection for more complete coverage, more comfort and a richer memory of the day.',
           items: [
             '1 photographer + 1 videographer',
-            '10 hours coverage',
+            '8 hours coverage',
             'Full photo gallery',
             'Long wedding film',
             'Short teaser',
