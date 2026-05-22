@@ -204,7 +204,7 @@ export default function PhotographeMariagePage({
     ? [
         {
           name: 'Collection Essentielle',
-          price: 'À partir de 1 490 €',
+          price: 'À partir de 990 €',
           desc: 'Pour les couples qui souhaitent couvrir les temps forts avec une formule claire, élégante et efficace.',
           items: [
             '1 photographe',
@@ -219,11 +219,11 @@ export default function PhotographeMariagePage({
         },
         {
           name: 'Collection Signature',
-          price: 'À partir de 2 290 €',
+          price: 'À partir de 1490 €',
           desc: 'La formule idéale pour une couverture plus complète, plus confortable et plus riche en souvenirs.',
           items: [
             '1 photographe',
-            '10 heures de présence',
+            '8 heures de présence',
             'Galerie photo complète',
             'Galerie privée',
             'Livraison HD',
@@ -235,11 +235,11 @@ export default function PhotographeMariagePage({
         },
         {
           name: 'Collection Maison',
-          price: 'À partir de 3 290 €',
+          price: 'À partir de 2490 €',
           desc: 'Pour une couverture haut de gamme pensée pour les mariages les plus complets et les projets les plus exigeants.',
           items: [
             'Couverture photo premium',
-            'Jusqu’à 12 heures de présence',
+            'Jusqu’à 10 heures de présence',
             'Galerie photo complète',
             'Galerie privée premium',
             'Livraison HD',
@@ -253,7 +253,7 @@ export default function PhotographeMariagePage({
     : [
         {
           name: 'Essential Collection',
-          price: 'From €1,490',
+          price: 'From €990',
           desc: 'For couples who want key moments covered with a clear, elegant and efficient collection.',
           items: [
             '1 photographer',
@@ -268,11 +268,11 @@ export default function PhotographeMariagePage({
         },
         {
           name: 'Signature Collection',
-          price: 'From €2,290',
+          price: 'From €1,490',
           desc: 'The ideal collection for more complete coverage, more comfort and a richer memory of the day.',
           items: [
             '1 photographer',
-            '10 hours coverage',
+            '8 hours coverage',
             'Full photo gallery',
             'Private gallery',
             'HD delivery',
@@ -284,11 +284,11 @@ export default function PhotographeMariagePage({
         },
         {
           name: 'Maison Collection',
-          price: 'From €3,290',
+          price: 'From €2,490',
           desc: 'For high-end coverage designed for the most complete weddings and the most demanding projects.',
           items: [
             'Premium photography coverage',
-            'Up to 12 hours coverage',
+            'Up to 10 hours coverage',
             'Full photo gallery',
             'Premium private gallery',
             'HD delivery',
