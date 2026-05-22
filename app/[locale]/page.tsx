@@ -228,17 +228,17 @@ export default function HomePage({
     ? [
         {
           title: 'Mariage Photo',
-          price: 'À partir de 1 490 €',
+          price: 'À partir de 990 €',
           text: 'Collections avec présence, photos retouchées, galerie privée et livraison HD.',
         },
         {
           title: 'Mariage Vidéo',
-          price: 'À partir de 1 690 €',
+          price: 'À partir de 990 €',
           text: 'Film de mariage premium, teaser selon formule, montage soigné et livraison HD.',
         },
         {
           title: 'Mariage Photo + Vidéo',
-          price: 'À partir de 2 490 €',
+          price: 'À partir de 1990 €',
           text: 'La formule la plus complète pour une couverture cohérente, fluide et haut de gamme.',
           featured: true,
         },
@@ -246,17 +246,17 @@ export default function HomePage({
     : [
         {
           title: 'Wedding Photography',
-          price: 'From €1,490',
+          price: 'From €990',
           text: 'Collections with coverage time, edited photos, private gallery and HD delivery.',
         },
         {
           title: 'Wedding Video',
-          price: 'From €1,690',
+          price: 'From €990',
           text: 'Premium wedding film, teaser depending on collection, careful editing and HD delivery.',
         },
         {
           title: 'Wedding Photo + Video',
-          price: 'From €2,490',
+          price: 'From €1,990',
           text: 'The most complete package for coherent, fluid and high-end coverage.',
           featured: true,
         },
