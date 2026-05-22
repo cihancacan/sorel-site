@@ -204,12 +204,13 @@ export default function VideasteMariagePage({
     ? [
         {
           name: 'Collection Essentielle',
-          price: 'À partir de 1 690 €',
+          price: 'À partir de 990 €',
           desc: 'Pour les couples qui souhaitent conserver les temps forts avec un film élégant, clair et efficace.',
           items: [
             '1 vidéaste',
             '6 heures de présence',
-            'Film de mariage de 3 à 5 min',
+            'Film de mariage long',
+            'Teaser court',
             'Montage soigné',
             'Livraison HD',
             'Accompagnement en amont',
@@ -219,12 +220,12 @@ export default function VideasteMariagePage({
         },
         {
           name: 'Collection Signature',
-          price: 'À partir de 2 490 €',
+          price: 'À partir de 1 490 €',
           desc: 'La formule idéale pour une couverture plus complète, plus confortable et plus riche en émotions.',
           items: [
             '1 vidéaste',
-            '10 heures de présence',
-            'Film de mariage de 5 à 8 min',
+            '8 heures de présence',
+            'Film de mariage long',
             'Teaser court',
             'Montage premium',
             'Livraison HD',
@@ -235,12 +236,12 @@ export default function VideasteMariagePage({
         },
         {
           name: 'Collection Maison',
-          price: 'À partir de 3 490 €',
+          price: 'À partir de 2 490 €',
           desc: 'Pour une couverture haut de gamme pensée pour les mariages les plus complets et les projets les plus exigeants.',
           items: [
             'Couverture vidéo premium',
-            'Jusqu’à 12 heures de présence',
-            'Film de mariage de 8 à 12 min',
+            'Jusqu’à 10 heures de présence',
+            'Film de mariage long',
             'Teaser',
             'Montage premium avancé',
             'Livraison HD',
@@ -253,12 +254,13 @@ export default function VideasteMariagePage({
     : [
         {
           name: 'Essential Collection',
-          price: 'From €1,690',
+          price: 'From €990',
           desc: 'For couples who want to preserve key moments with an elegant, clear and efficient film.',
           items: [
             '1 videographer',
             '6 hours coverage',
-            '3 to 5 min wedding film',
+            'Long wedding film',
+            'Short teaser',
             'Careful editing',
             'HD delivery',
             'Guidance beforehand',
@@ -268,12 +270,12 @@ export default function VideasteMariagePage({
         },
         {
           name: 'Signature Collection',
-          price: 'From €2,490',
+          price: 'From €1,490',
           desc: 'The ideal collection for more complete coverage, more comfort and a richer emotional memory.',
           items: [
             '1 videographer',
             '10 hours coverage',
-            '5 to 8 min wedding film',
+            'Long wedding film',
             'Short teaser',
             'Premium editing',
             'HD delivery',
@@ -284,12 +286,12 @@ export default function VideasteMariagePage({
         },
         {
           name: 'Maison Collection',
-          price: 'From €3,490',
+          price: 'From €2,490',
           desc: 'For high-end coverage designed for the most complete weddings and the most demanding projects.',
           items: [
             'Premium video coverage',
-            'Up to 12 hours coverage',
-            '8 to 12 min wedding film',
+            'Up to 10 hours coverage',
+            'Long wedding film',
             'Teaser',
             'Advanced premium editing',
             'HD delivery',
