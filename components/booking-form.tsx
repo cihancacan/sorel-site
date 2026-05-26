@@ -49,6 +49,10 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
       ? locale === 'fr'
         ? 'Collection Maison'
         : 'Maison Collection'
+      : prefilledPack === 'ceremonie' || prefilledPack === 'ceremony'
+      ? locale === 'fr'
+        ? 'Formule Cérémonie / Événement précis'
+        : 'Ceremony / Key Moment Package'
       : prefilledPack;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
