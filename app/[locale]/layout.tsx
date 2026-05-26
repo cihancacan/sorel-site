@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/whatsapp-button';
 import CookieBanner from '@/components/cookie-banner';
 import { getMessages } from '@/lib/i18n';
 import CrispChat from '@/components/crisp-chat';
+import CeremonyOfferInjector from '@/components/ceremony-offer-injector';
 import Script from 'next/script';
 
 type Locale = 'fr' | 'en';
@@ -61,6 +62,7 @@ export default function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header locale={locale as Locale} t={navT} />
           <main>{children}</main>
+          <CeremonyOfferInjector />
           <Footer locale={locale as Locale} />
           <WhatsAppButton />
           <CrispChat />
