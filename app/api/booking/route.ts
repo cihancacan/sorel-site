@@ -52,6 +52,27 @@ function formatMediaType(mediaType: string = '') {
   }
 }
 
+function formatEventType(eventType: string = '') {
+  switch (eventType) {
+    case 'wedding':
+      return 'Mariage'
+    case 'civil-ceremony':
+      return 'Mairie / cérémonie civile'
+    case 'religious-ceremony':
+      return 'Église / cérémonie religieuse'
+    case 'proposal':
+      return 'Demande en mariage'
+    case 'private-event':
+      return 'Événement privé'
+    case 'corporate-event':
+      return 'Événement entreprise'
+    case 'other':
+      return 'Autre'
+    default:
+      return eventType || '-'
+  }
+}
+
 function formatPack(pack: string = '') {
   switch (pack) {
     case 'essentielle':
@@ -61,6 +82,9 @@ function formatPack(pack: string = '') {
       return 'Collection Signature'
     case 'maison':
       return 'Collection Maison'
+    case 'ceremonie':
+    case 'ceremony':
+      return 'Formule Cérémonie / Événement précis'
     default:
       return pack || '-'
   }
@@ -72,8 +96,10 @@ export async function POST(req: Request) {
 
     const {
       service = '',
+      eventDate = '',
       city = '',
       mediaType = '',
+      eventType = '',
       pack = '',
       name = '',
       email = '',
@@ -81,7 +107,7 @@ export async function POST(req: Request) {
       message = '',
     } = body
 
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone || !eventDate || !city || !eventType) {
       return NextResponse.json(
         { success: false, error: 'Champs obligatoires manquants.' },
         { status: 400 }
@@ -90,8 +116,10 @@ export async function POST(req: Request) {
 
     const formatted = {
       service: formatService(service),
+      eventDate: eventDate || '-',
       city: city || '-',
       mediaType: formatMediaType(mediaType),
+      eventType: formatEventType(eventType),
       pack: formatPack(pack),
       name: name || '-',
       email: email || '-',
@@ -101,8 +129,10 @@ export async function POST(req: Request) {
 
     const data = {
       service: escapeHtml(formatted.service),
+      eventDate: escapeHtml(formatted.eventDate),
       city: escapeHtml(formatted.city),
       mediaType: escapeHtml(formatted.mediaType),
+      eventType: escapeHtml(formatted.eventType),
       pack: escapeHtml(formatted.pack),
       name: escapeHtml(formatted.name),
       email: escapeHtml(formatted.email),
@@ -114,30 +144,36 @@ export async function POST(req: Request) {
       from: `SOREL Studio <${process.env.MAIL_FROM}>`,
       to: 'contact@sorelstudio.fr',
       replyTo: data.email,
-      subject: `Nouvelle demande de réservation - ${data.name}`,
+      subject: `Nouvelle demande - ${data.eventDate} - ${data.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
-          <h2>Nouvelle demande de réservation</h2>
-          <p><strong>Nom :</strong> ${data.name}</p>
-          <p><strong>Email :</strong> ${data.email}</p>
-          <p><strong>Téléphone :</strong> ${data.phone}</p>
+          <h2>Nouvelle demande de disponibilité</h2>
+          <p><strong>Date :</strong> ${data.eventDate}</p>
+          <p><strong>Ville / lieu :</strong> ${data.city}</p>
+          <p><strong>Type d'événement :</strong> ${data.eventType}</p>
           <p><strong>Service :</strong> ${data.service}</p>
-          <p><strong>Ville :</strong> ${data.city}</p>
           <p><strong>Type :</strong> ${data.mediaType}</p>
           <p><strong>Formule choisie :</strong> ${data.pack}</p>
+          <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;" />
+          <p><strong>Prénom / nom :</strong> ${data.name}</p>
+          <p><strong>Email :</strong> ${data.email}</p>
+          <p><strong>Téléphone :</strong> ${data.phone}</p>
           <p><strong>Message :</strong><br>${data.message}</p>
         </div>
       `,
       text: `
-Nouvelle demande de réservation
+Nouvelle demande de disponibilité
 
-Nom: ${formatted.name}
-Email: ${formatted.email}
-Téléphone: ${formatted.phone}
+Date: ${formatted.eventDate}
+Ville / lieu: ${formatted.city}
+Type d'événement: ${formatted.eventType}
 Service: ${formatted.service}
-Ville: ${formatted.city}
 Type: ${formatted.mediaType}
 Formule choisie: ${formatted.pack}
+
+Prénom / nom: ${formatted.name}
+Email: ${formatted.email}
+Téléphone: ${formatted.phone}
 Message: ${formatted.message}
       `,
     })
@@ -151,7 +187,8 @@ Message: ${formatted.message}
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
           <p>Bonjour ${data.name},</p>
           <p>Nous vous remercions pour votre demande.</p>
-          <p>Notre équipe a bien reçu votre demande de réservation et reviendra vers vous très prochainement afin d’échanger sur votre projet.</p>
+          <p>Notre équipe a bien reçu votre demande de disponibilité pour le <strong>${data.eventDate}</strong> à <strong>${data.city}</strong>.</p>
+          <p>Nous revenons vers vous rapidement afin de confirmer la disponibilité et d’échanger sur votre projet.</p>
           <p>Nous vous appellerons à partir de ce numéro <strong>01 88 84 22 22</strong>.</p>
           <p>Si vous avez une préférence de disponibilité, vous pouvez répondre directement à cet email en nous indiquant les créneaux qui vous conviennent.</p>
           <p>Bien cordialement,<br>L’équipe SOREL Studio</p>
@@ -162,7 +199,9 @@ Bonjour ${name},
 
 Nous vous remercions pour votre demande.
 
-Notre équipe a bien reçu votre demande de réservation et reviendra vers vous très prochainement afin d’échanger sur votre projet.
+Notre équipe a bien reçu votre demande de disponibilité pour le ${formatted.eventDate} à ${formatted.city}.
+
+Nous revenons vers vous rapidement afin de confirmer la disponibilité et d’échanger sur votre projet.
 
 Nous vous appellerons à partir du numéro 01 88 84 22 22.
 
