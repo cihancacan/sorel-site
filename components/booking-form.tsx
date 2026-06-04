@@ -57,16 +57,53 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
         : 'Ceremony / Key Moment Package'
       : prefilledPack;
 
+  const normalizedPack =
+    prefilledPack === 'essential' ? 'essentielle' : prefilledPack === 'ceremony' ? 'ceremonie' : prefilledPack;
+
+  const priceByService: Record<string, Record<string, { fr: string; en: string }>> = {
+    'photographe-mariage': {
+      ceremonie: { fr: 'À partir de 490 €', en: 'From €490' },
+      essentielle: { fr: 'À partir de 990 €', en: 'From €990' },
+      signature: { fr: 'À partir de 1 490 €', en: 'From €1,490' },
+      maison: { fr: 'À partir de 2 490 €', en: 'From €2,490' },
+    },
+    'videaste-mariage': {
+      ceremonie: { fr: 'À partir de 490 €', en: 'From €490' },
+      essentielle: { fr: 'À partir de 990 €', en: 'From €990' },
+      signature: { fr: 'À partir de 1 490 €', en: 'From €1,490' },
+      maison: { fr: 'À partir de 2 490 €', en: 'From €2,490' },
+    },
+    'photo-video-mariage': {
+      ceremonie: { fr: 'À partir de 990 €', en: 'From €990' },
+      essentielle: { fr: 'À partir de 1 990 €', en: 'From €1,990' },
+      signature: { fr: 'À partir de 2 990 €', en: 'From €2,990' },
+      maison: { fr: 'À partir de 4 990 €', en: 'From €4,990' },
+    },
+  };
+
   const selectedPrice =
-    prefilledPack === 'ceremonie' || prefilledPack === 'ceremony'
-      ? prefilledMediaType === 'both'
-        ? isFr
-          ? 'à partir de 990 €'
-          : 'from €990'
-        : isFr
-        ? 'à partir de 490 €'
-        : 'from €490'
-      : '';
+    priceByService[prefilledService]?.[normalizedPack]?.[isFr ? 'fr' : 'en'] || '';
+
+  const selectedHelpText =
+    normalizedPack === 'ceremonie'
+      ? isFr
+        ? 'Idéal pour couvrir une mairie, une église, une cérémonie civile, religieuse ou un moment précis.'
+        : 'Ideal for covering a town hall, church, civil ceremony, religious ceremony or one precise key moment.'
+      : normalizedPack === 'essentielle'
+      ? isFr
+        ? 'Une couverture claire et efficace pour les temps forts essentiels.'
+        : 'A clear and efficient coverage for the essential key moments.'
+      : normalizedPack === 'signature'
+      ? isFr
+        ? 'La formule la plus équilibrée pour une couverture plus complète et confortable.'
+        : 'The most balanced package for more complete and comfortable coverage.'
+      : normalizedPack === 'maison'
+      ? isFr
+        ? 'Une couverture premium pensée pour les mariages complets et les projets les plus exigeants.'
+        : 'A premium coverage designed for complete weddings and the most demanding projects.'
+      : isFr
+      ? 'Nous vous orienterons vers la formule la plus adaptée à votre projet.'
+      : 'We will guide you toward the most suitable package for your project.';
 
   const whatsappText = isFr
     ? 'Bonjour, je souhaite vérifier une disponibilité pour une prestation photo/vidéo.'
@@ -187,13 +224,18 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
           <p className="sorel-label text-sorel-champagne mb-3">
             {isFr ? 'Formule sélectionnée' : 'Selected package'}
           </p>
-          <p className="font-display text-2xl md:text-3xl font-light text-sorel-black leading-tight mb-3">
-            {packLabel} {selectedPrice && <span className="text-sorel-champagne">— {selectedPrice}</span>}
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-3">
+            <p className="font-display text-2xl md:text-3xl font-light text-sorel-black leading-tight">
+              {packLabel}
+            </p>
+            {selectedPrice && (
+              <p className="font-display text-3xl md:text-4xl font-light text-sorel-champagne leading-none">
+                {selectedPrice}
+              </p>
+            )}
+          </div>
           <p className="text-xs text-sorel-graphite font-light leading-[1.8]">
-            {isFr
-              ? 'Idéal pour couvrir une mairie, une église, une cérémonie civile, religieuse ou un moment précis.'
-              : 'Ideal for covering a town hall, church, civil ceremony, religious ceremony or one precise key moment.'}
+            {selectedHelpText}
           </p>
         </div>
       )}
