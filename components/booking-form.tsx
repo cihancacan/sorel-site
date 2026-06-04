@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Send, CircleCheck as CheckCircle } from 'lucide-react';
+import { Send, CircleCheck as CheckCircle, MessageCircle, ShieldCheck } from 'lucide-react';
 import { servicesFr } from '@/data/services.fr';
 import { servicesEn } from '@/data/services.en';
+import { brand } from '@/data/brand';
 
 interface BookingFormProps {
   locale: 'fr' | 'en';
@@ -35,25 +36,44 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
   const prefilledPack = searchParams.get('pack') || '';
 
   const services = locale === 'fr' ? servicesFr : servicesEn;
+  const isFr = locale === 'fr';
 
   const packLabel =
     prefilledPack === 'essentielle' || prefilledPack === 'essential'
-      ? locale === 'fr'
+      ? isFr
         ? 'Collection Essentielle'
         : 'Essential Collection'
       : prefilledPack === 'signature'
-      ? locale === 'fr'
+      ? isFr
         ? 'Collection Signature'
         : 'Signature Collection'
       : prefilledPack === 'maison'
-      ? locale === 'fr'
+      ? isFr
         ? 'Collection Maison'
         : 'Maison Collection'
       : prefilledPack === 'ceremonie' || prefilledPack === 'ceremony'
-      ? locale === 'fr'
+      ? isFr
         ? 'Formule Cérémonie / Événement précis'
         : 'Ceremony / Key Moment Package'
       : prefilledPack;
+
+  const selectedPrice =
+    prefilledPack === 'ceremonie' || prefilledPack === 'ceremony'
+      ? prefilledMediaType === 'both'
+        ? isFr
+          ? 'à partir de 990 €'
+          : 'from €990'
+        : isFr
+        ? 'à partir de 490 €'
+        : 'from €490'
+      : '';
+
+  const whatsappText = isFr
+    ? 'Bonjour, je souhaite vérifier une disponibilité pour une prestation photo/vidéo.'
+    : 'Hello, I would like to check availability for a photo/video service.';
+  const whatsappUrl = `https://wa.me/${brand.whatsapp.replace('+', '')}?text=${encodeURIComponent(
+    whatsappText
+  )}`;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,8 +83,10 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
 
     const payload = {
       service: formData.get('service'),
+      eventDate: formData.get('eventDate'),
       city: formData.get('city'),
       mediaType: formData.get('mediaType'),
+      eventType: formData.get('eventType'),
       pack: prefilledPack || '',
       name: formData.get('name'),
       email: formData.get('email'),
@@ -85,7 +107,7 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
 
       if (!res.ok) {
         alert(
-          locale === 'fr'
+          isFr
             ? "Une erreur s'est produite. Merci de réessayer."
             : 'An error occurred. Please try again.'
         );
@@ -105,7 +127,7 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
     } catch (error) {
       console.error(error);
       alert(
-        locale === 'fr'
+        isFr
           ? "Une erreur s'est produite. Merci de réessayer."
           : 'An error occurred. Please try again.'
       );
@@ -135,23 +157,70 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-7">
-      <div className="bg-sorel-white/60 border border-sorel-champagne/20 p-5">
-        <p className="text-xs text-sorel-graphite font-light leading-[1.8]">
-          {locale === 'fr'
-            ? 'Les disponibilités sont à vérifier auprès de notre équipe. Soumettez votre demande et nous vous confirmerons les créneaux disponibles sous 24h.'
-            : 'Availability must be confirmed with our team. Submit your request and we will confirm available slots within 24 hours.'}
+      <div className="bg-sorel-black text-sorel-cream border border-sorel-champagne/25 p-6 md:p-7">
+        <p className="sorel-label text-sorel-champagne mb-4">
+          {isFr ? 'Demande rapide' : 'Quick request'}
         </p>
+        <h2 className="font-display text-3xl md:text-4xl font-light leading-tight mb-4">
+          {isFr ? 'Vérifiez votre date en 1 minute' : 'Check your date in 1 minute'}
+        </h2>
+        <p className="text-sm text-sorel-cream/75 font-light leading-[1.8] mb-5">
+          {isFr
+            ? 'Indiquez simplement la date, le lieu et la prestation souhaitée. Nous vous confirmons rapidement si une équipe SOREL est disponible.'
+            : 'Simply share the date, venue and service you need. We will quickly confirm whether a SOREL team is available.'}
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {(isFr
+            ? ['Réponse rapide', 'Sans engagement', 'Photo / Vidéo / Les deux']
+            : ['Fast reply', 'No commitment', 'Photo / Video / Both']
+          ).map((item) => (
+            <div key={item} className="flex items-center gap-2 text-xs text-sorel-cream/80 font-light">
+              <ShieldCheck size={14} className="text-sorel-champagne flex-shrink-0" />
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {packLabel && (
-        <div className="bg-sorel-white/60 border border-sorel-champagne/20 p-5">
+        <div className="bg-sorel-white/70 border border-sorel-champagne/30 p-5 md:p-6">
+          <p className="sorel-label text-sorel-champagne mb-3">
+            {isFr ? 'Formule sélectionnée' : 'Selected package'}
+          </p>
+          <p className="font-display text-2xl md:text-3xl font-light text-sorel-black leading-tight mb-3">
+            {packLabel} {selectedPrice && <span className="text-sorel-champagne">— {selectedPrice}</span>}
+          </p>
           <p className="text-xs text-sorel-graphite font-light leading-[1.8]">
-            {locale === 'fr'
-              ? `Vous avez sélectionné ${packLabel}.`
-              : `You selected ${packLabel}.`}
+            {isFr
+              ? 'Idéal pour couvrir une mairie, une église, une cérémonie civile, religieuse ou un moment précis.'
+              : 'Ideal for covering a town hall, church, civil ceremony, religious ceremony or one precise key moment.'}
           </p>
         </div>
       )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div>
+          <label className={labelClass}>{isFr ? "Date de l'événement" : 'Event date'}</label>
+          <input
+            name="eventDate"
+            type="text"
+            className={inputClass}
+            placeholder={isFr ? 'Ex : samedi 12 juillet 2026' : 'E.g. Saturday, July 12, 2026'}
+            required
+          />
+        </div>
+
+        <div>
+          <label className={labelClass}>{isFr ? 'Ville ou lieu' : 'City or venue'}</label>
+          <input
+            name="city"
+            type="text"
+            className={inputClass}
+            placeholder={isFr ? 'Paris, Versailles, Rouen...' : 'Paris, Versailles, Rouen...'}
+            required
+          />
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
@@ -172,51 +241,60 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
         </div>
 
         <div>
-          <label className={labelClass}>{t.city}</label>
-          <input
-            name="city"
-            type="text"
+          <label className={labelClass}>{t.mediaType}</label>
+          <select
+            name="mediaType"
             className={inputClass}
-            placeholder="Paris"
-          />
+            defaultValue={prefilledMediaType}
+          >
+            <option value="photo">{t.photo}</option>
+            <option value="video">{t.video}</option>
+            <option value="both">{t.both}</option>
+          </select>
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>{t.mediaType}</label>
-        <select
-          name="mediaType"
-          className={inputClass}
-          defaultValue={prefilledMediaType}
-        >
-          <option value="photo">{t.photo}</option>
-          <option value="video">{t.video}</option>
-          <option value="both">{t.both}</option>
+        <label className={labelClass}>{isFr ? "Type d'événement" : 'Event type'}</label>
+        <select name="eventType" className={inputClass} required defaultValue="">
+          <option value="">&mdash;</option>
+          <option value="wedding">{isFr ? 'Mariage' : 'Wedding'}</option>
+          <option value="civil-ceremony">{isFr ? 'Mairie / cérémonie civile' : 'Town hall / civil ceremony'}</option>
+          <option value="religious-ceremony">{isFr ? 'Église / cérémonie religieuse' : 'Church / religious ceremony'}</option>
+          <option value="proposal">{isFr ? 'Demande en mariage' : 'Proposal'}</option>
+          <option value="private-event">{isFr ? 'Événement privé' : 'Private event'}</option>
+          <option value="corporate-event">{isFr ? 'Événement entreprise' : 'Corporate event'}</option>
+          <option value="other">{isFr ? 'Autre' : 'Other'}</option>
         </select>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div>
-          <label className={labelClass}>{t.name}</label>
+          <label className={labelClass}>{isFr ? 'Votre prénom' : 'Your first name'}</label>
           <input name="name" type="text" className={inputClass} required />
         </div>
         <div>
-          <label className={labelClass}>{t.email}</label>
-          <input name="email" type="email" className={inputClass} required />
+          <label className={labelClass}>{t.phone}</label>
+          <input name="phone" type="tel" className={inputClass} required />
         </div>
       </div>
 
       <div>
-        <label className={labelClass}>{t.phone}</label>
-        <input name="phone" type="tel" className={inputClass} required />
+        <label className={labelClass}>{t.email}</label>
+        <input name="email" type="email" className={inputClass} required />
       </div>
 
       <div>
-        <label className={labelClass}>{t.message}</label>
+        <label className={labelClass}>{isFr ? 'Message optionnel' : 'Optional message'}</label>
         <textarea
           name="message"
           className={`${inputClass} resize-none`}
           rows={4}
+          placeholder={
+            isFr
+              ? "Horaire prévu, nombre d'invités, lieu exact, ambiance recherchée..."
+              : 'Schedule, number of guests, exact venue, desired atmosphere...'
+          }
         />
       </div>
 
@@ -225,9 +303,34 @@ export default function BookingForm({ locale, t }: BookingFormProps) {
         disabled={loading}
         className="sorel-btn-primary w-full justify-center disabled:opacity-60"
       >
-        {loading ? (locale === 'fr' ? 'Envoi...' : 'Sending...') : t.submit}
+        {loading
+          ? isFr
+            ? 'Vérification...'
+            : 'Checking...'
+          : isFr
+          ? 'Vérifier ma date'
+          : 'Check my date'}
         <Send size={14} />
       </button>
+
+      <p className="text-center text-xs text-sorel-silver font-light">
+        {isFr ? 'Réponse rapide — aucun engagement' : 'Fast reply — no commitment'}
+      </p>
+
+      <div className="border border-sorel-black/8 bg-sorel-white/60 p-5 text-center">
+        <p className="text-sm text-sorel-graphite font-light mb-4">
+          {isFr ? 'Vous préférez aller plus vite ?' : 'Prefer to move faster?'}
+        </p>
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-3 border border-sorel-black/15 text-sorel-black text-[11px] font-medium tracking-[0.15em] uppercase px-6 py-4 transition-all duration-500 hover:bg-sorel-black hover:text-sorel-cream"
+        >
+          <MessageCircle size={15} />
+          {isFr ? 'Écrire sur WhatsApp' : 'Message on WhatsApp'}
+        </a>
+      </div>
     </form>
   );
 }
