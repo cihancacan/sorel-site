@@ -25,7 +25,7 @@ export async function generateMetadata({
     return buildMetadata({
       title: 'Photo & Vidéo Mariage en France | SOREL Studio',
       description:
-        'Photographe et vidéaste mariage premium en France. Formules photo + vidéo, collections claires, galerie privée, film de mariage et réponse sous 24h.',
+        'Photographe et vidéaste mariage professionnel en France. Formules photo + vidéo, collections claires, galerie privée, film de mariage et réponse sous 24h.',
       locale,
       path: '/fr/photo-video-mariage',
     });
